@@ -110,6 +110,10 @@
         font-size: 3.5vw !important;
     }
 
+    .language-bullet{
+        font-size: 0.6rem;
+    }
+
     .masthead h1.ui.header {
         font-size: 10vw;
         margin-top: 25vh;
