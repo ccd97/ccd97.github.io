@@ -74,7 +74,7 @@ projects = [
     repo: "ccd97.github.io",
     type: "github",
     description: "The Website which you are currently going through. A minimal, simple, clean user interface.",
-    language: "Javacript",
+    language: "Javascript",
     tools: ["javascript-jquery", "semantic-ui"],
   }
 ]

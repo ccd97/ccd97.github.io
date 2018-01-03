@@ -67,7 +67,7 @@ function addProjectCards(){
                 <div class="content h150">
                     <div class="header">` + pname + `
                         <span class="right floated language-label ` + plang + `">
-                            ⚫&nbsp; ` + plang +`
+                            <span class="language-bullet">●</span>&nbsp; ` + plang +`
                         </span>
                     </div>
                     <div class="meta"><span class="date" id="udate-` + p +`"></span></div>

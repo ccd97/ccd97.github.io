@@ -17,6 +17,10 @@
     font-weight: 100;
 }
 
+.language-bullet{
+    font-size: 1.2rem;
+}
+
 .Python{
     color: #016936;
 }
