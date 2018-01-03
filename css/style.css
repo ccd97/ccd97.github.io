@@ -61,7 +61,7 @@
 
 .mastfoot h1.ui.header {
     font-size: 3rem;
-    margin-top: 4em;
+    margin-top: 25vh;
     font-family: "Bitter";
 }
 
@@ -79,16 +79,15 @@
 }
 
 .ui.segment {
-    min-height: 700px;
+    min-height: 105vh;
     padding: 1em 0em;
 }
 
 .masthead h1.ui.header {
-    margin-top: 2em;
+    margin-top: 25vh;
     margin-bottom: 0em;
     font-family: "Bitter";
     font-size: 5.4em;
-    font-weight: 1000;
 }
 
 .masthead h2 {
@@ -105,32 +104,20 @@
     border-bottom: none;
 }
 
-@media only screen and (max-width: 700px) {
-    .ui.fixed.menu {
-        display: none !important;
-    }
+@media only screen and (max-width: 745px) {
 
-    .secondary.pointing.menu .item,
-    .secondary.pointing.menu .menu {
-        display: none;
-    }
-
-    .secondary.pointing.menu .toc.item {
-        display: block;
-    }
-
-    .masthead.segment {
-        min-height: 350px;
+    .designation-label{
+        font-size: 3.5vw !important;
     }
 
     .masthead h1.ui.header {
-        font-size: 3em;
-        margin-top: 1.5em;
+        font-size: 10vw;
+        margin-top: 25vh;
     }
 
     .mastfoot h1.ui.header {
         font-size: 1.5rem;
-        margin-top: 7em;
+        margin-top: 25vh;
     }
 
     .masthead h2 {

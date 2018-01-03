@@ -3,7 +3,7 @@ function setVisibilityOfMenu(){
         once: false,
         onBottomPassed: function() {
             $('.fixed.menu').transition('fade in');
-            $('.menu_home').removeClass('active');
+            $('.menu .item').removeClass('active');
         },
         onBottomPassedReverse: function() {
             $('.fixed.menu').transition('fade out');
@@ -17,12 +17,12 @@ function setVisibilityOfMenu(){
         $('#seg_' + segments[i]).visibility({
             once: false,
             onTopPassed: function(){
-                $('.menu_' + segments[i-1]).removeClass('active');
+                $('.menu .item').removeClass('active');
                 $('.menu_' + segments[i]).addClass('active');
             },
             onTopPassedReverse: function(){
+                $('.menu .item').removeClass('active');
                 $('.menu_' + segments[i-1]).addClass('active');
-                $('.menu_' + segments[i]).removeClass('active');
             }
         });
     }
@@ -31,7 +31,7 @@ function setVisibilityOfMenu(){
 function setMenuScroll(){
     $('.menu .item').on('click', function(event){
         var id = $(this).attr('href').replace('#', '')
-        var position = $('#' + id).offset().top;
+        var position = $('#' + id).offset().top + 5;
         $('html, body').animate({ scrollTop: position }, 500);
         var menuitem = '.menu_' + id.split("_")[1]
         $('.menu .item').removeClass('active');
@@ -80,7 +80,7 @@ function addProjectCards(){
                 if("updated_at" in projects[p])
                     $('#udate-' + p).append("Updated on " + projects[p].updated_at);
                 if("type" in projects[p] && projects[p].type == "gitlab"){
-                    repourl = "https://gitlab.com/ccd97/" + prepo;
+                    repourl = "https://gitlab.com/ccd97/" + projects[p].repo;
                     $('#stat-' + p).append(`<a class="right floated" href="`
                     + repourl +`">Visit <i class="gitlab icon"></i></a>`);
                 }
