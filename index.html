@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cyprien Dcunha</title>
+    <link rel="stylesheet" type="text/css" href="dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="dist/semantic.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+
+    <!-- Following Menu -->
+    <div class="ui large top fixed hidden menu">
+        <div class="ui container">
+            <a href="#seg_home" class="menu_home active item">Home</a>
+            <a href="#seg_projects" class="menu_projects item">Projects</a>
+            <a href="#seg_skills" class="menu_skills item">Skills</a>
+            <a href="#seg_contact" class="menu_contact item">Contact</a>
+        </div>
+    </div>
+
+    <!-- Page Contents -->
+    <div class="pusher">
+
+        <!--Header-->
+        <div class="ui vertical masthead center aligned segment" id="seg_home">
+            <div class="ui container">
+                <div class="ui large secondary tabular pointing menu">
+                    <a href="#seg_home" class="menu_home active item">Home</a>
+                    <a href="#seg_projects" class="menu_projects item">Projects</a>
+                    <a href="#seg_skills" class="menu_skills item">Skills</a>
+                    <a href="#seg_contact" class="menu_contact item">Contact</a>
+                </div>
+            </div>
+            <div class="ui text container">
+                <h1 class="ui header color-blue">Cyprien Dcunha</h1>
+                <div class="ui horizontal bulleted list">
+                  <span class="item designation-label">Software developer</span>
+                  <span class="item designation-label">Sport programmer</span>
+                  <span class="item designation-label">AI enthusiast</span>
+                  <span class="item designation-label">CS generalist</span>
+                </div>
+                <!-- <h3>Software developer • Sport programmer • AI enthusiast • CS generalist</h3> -->
+            </div>
+        </div>
+
+        <!--Projects-->
+        <div class="ui vertical stripe segment" id="seg_projects">
+            <div class="ui cards container grid three doubling stackable" id="project-cards"></div>
+        </div>
+
+        <!-- Skills-->
+        <div class="ui vertical stripe segment" id="seg_skills">
+            <div class="ui cards container grid three doubling stackable" id ="skill-cards"></div>
+        </div>
+
+        <!--Contact-->
+        <div class="ui vertical stripe center aligned segment mastfoot" id="seg_contact">
+            <div class="ui text container">
+                <h1 class="ui header color-blue">dcunha.cyprien@gmail.com</h1>
+                <div class="ui horizontal list">
+                    <a href="https://github.com/ccd97" class="ui basic label huge">
+                        <i class="github icon"></i>GitHub
+                    </a>
+                    <a href="https://gitlab.com/ccd97" class="ui basic label huge">
+                        <i class="gitlab icon"></i>GitLab
+                    </a>
+                    <a href="https://www.linkedin.com/in/cyprien-dcunha" class="ui basic label huge">
+                        <i class="linkedin square icon"></i>LinkedIN
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
