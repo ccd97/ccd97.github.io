@@ -1,12 +1,42 @@
-function showFollowingMenuOnTransition(){
+function setVisibilityOfMenu(){
     $('.masthead').visibility({
         once: false,
         onBottomPassed: function() {
             $('.fixed.menu').transition('fade in');
+            $('.menu_home').removeClass('active');
         },
         onBottomPassedReverse: function() {
             $('.fixed.menu').transition('fade out');
+            $('.menu_home').addClass('active');
         }
+    });
+
+    var segments = ['home', 'projects', 'skills', 'contact']
+
+    for(let i=1; i<segments.length; i++){
+        $('#seg_' + segments[i]).visibility({
+            once: false,
+            onTopPassed: function(){
+                $('.menu_' + segments[i-1]).removeClass('active');
+                $('.menu_' + segments[i]).addClass('active');
+            },
+            onTopPassedReverse: function(){
+                $('.menu_' + segments[i-1]).addClass('active');
+                $('.menu_' + segments[i]).removeClass('active');
+            }
+        });
+    }
+}
+
+function setMenuScroll(){
+    $('.menu .item').on('click', function(event){
+        var id = $(this).attr('href').replace('#', '')
+        var position = $('#' + id).offset().top;
+        $('html, body').animate({ scrollTop: position }, 500);
+        var menuitem = '.menu_' + id.split("_")[1]
+        $('.menu .item').removeClass('active');
+        $(menuitem).addClass('active');
+        event.preventDefault();
     });
 }
 
@@ -59,8 +89,6 @@ function addProjectCards(){
                             + projects[p].link +`">Visit Project</a>`);
             }, 300);
         }
-
-
 
         cardhtml = `
             <div class="ui fluid card">
@@ -120,20 +148,8 @@ function addSkillCards(){
 }
 
 $(document).ready(function() {
-    showFollowingMenuOnTransition();
+    setVisibilityOfMenu();
     setMenuScroll();
     addProjectCards();
     addSkillCards();
 });
-
-function setMenuScroll(){
-    $('.menu .item').on('click', function(event){
-        var id = $(this).attr('href').replace('#', '')
-        var position = $('#' + id).offset().top;
-        $('html, body').animate({ scrollTop: position }, 500);
-        var menuitem = '.menu_' + id.split("_")[1]
-        $('.menu .item').removeClass('active');
-        $(menuitem).addClass('active');
-        event.preventDefault();
-    });
-}
