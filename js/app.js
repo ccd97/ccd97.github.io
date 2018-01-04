@@ -74,7 +74,7 @@ function addProjectCards(){
                     $('#stat-' + p).append(`<i class="fork icon"></i>` + json.forks_count);
                 }
                 $('#stat-' + p).append(`<a class="right floated" href="`
-                    + json.html_url +`">Visit <i class="github icon"></i></a>`);
+                    + json.html_url +`" target="_blank">Visit <i class="github icon"></i></a>`);
             });
         }
         else{
@@ -84,11 +84,11 @@ function addProjectCards(){
                 if("type" in projects[p] && projects[p].type == "gitlab"){
                     repourl = "https://gitlab.com/ccd97/" + projects[p].repo;
                     $('#stat-' + p).append(`<a class="right floated" href="`
-                    + repourl +`">Visit <i class="gitlab icon"></i></a>`);
+                    + repourl +`" target="_blank">Visit <i class="gitlab icon"></i></a>`);
                 }
                 else
                     $('#stat-' + p).append(`<a class="right floated" href="`
-                            + projects[p].link +`">Visit Project</a>`);
+                            + projects[p].link +`" target="_blank">Visit Project</a>`);
             }, 300);
         }
 
