@@ -8,7 +8,8 @@ projects = [
     tools:["python"]
   },
   {
-    repo: "Hello_NN",
+    name: "Neural Networks Intro",
+    repo: "hello_nn",
     type: "github",
     description: "Some simple neural networks written in numpy and tensorflow. It also contains ipython-notebook for other folks to understand neural networks.",
     language: "Python",
@@ -37,6 +38,13 @@ projects = [
     tools: ["blockchain", "C++17"]
   },
   {
+    repo: "SmartLanes",
+    type: "github",
+    description: "SmartLanes is a Bluetooth beacon based solution for efficiently doing transactions and analysis of vehicle traffic.",
+    language: "Android",
+    tools: ["java-android", "python-django", "javascript-nodejs"]
+  },
+  {
     name: "Teacher Feedback App",
     repo: "api-feedback-android",
     type: "github",
@@ -48,7 +56,7 @@ projects = [
     name: "Citizen Service App",
     repo: "CitizenService",
     type: "github",
-    description: "A multi-lingual Android app, that would auto-recognize images of garbage, potholes, and traffic posted by citizens to resolve them using neural network (embeded tensorflow).",
+    description: "A multi-lingual Android app, that would auto-recognize images of garbage, potholes, and traffic posted by citizens to resolve them using neural network (embedded tensorflow).",
     language: "Android",
     tools: ["tensorflow", "java-android"]
   },
@@ -85,7 +93,7 @@ skills = [
     content: [
       {
         heading: "Languages",
-        description: "Languages are matter of fact just syntaxes. Thus, programming paradigms matter. Following are the paradigms I am good with:",
+        description: "Following are the paradigms I am good with:",
         skill_list: [
           {
             name: "Imperative",
@@ -136,7 +144,7 @@ skills = [
     content: [
       {
         heading: "Tools",
-        description: "Any tool with a readme or doc can be mastered by me. Some of the important tools I use frequently are:",
+        description: "Some of the important tools I use frequently are:",
         skill_list: [
           {
             name: "Tensorflow",
@@ -151,7 +159,7 @@ skills = [
       },
       {
         heading: "Frameworks",
-        description: "Similar to tools, I can use any frameworks. However, mostly used frameworks are:",
+        description: "Mostly used frameworks by me are:",
         skill_list: [
           {
             name: "Android SDK",
@@ -164,7 +172,7 @@ skills = [
           {
             name: "Ethereum Dapp",
             popup: "Web3j, Solidity, Truffle, etc.",
-            weak: false
+            weak: true
           },
           {
             name: "NodeJS",
