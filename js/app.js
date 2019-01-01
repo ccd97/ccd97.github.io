@@ -94,7 +94,7 @@ function addProjectCards(){
 
         cardhtml = `
             <div class="ui fluid card">
-                <div class="content h150">
+                <div class="content hr12">
                     <div class="header">` + pname + `
                         <span class="right floated language-label ` + plang + `">
                             <span class="language-bullet">●</span>&nbsp; ` + plang +`
@@ -103,7 +103,7 @@ function addProjectCards(){
                     <div class="meta"><span class="date" id="udate-` + p +`"></span></div>
                     <div class="description">` + pdesc +`</div>
                 </div>
-                <div class="content h130">
+                <div class="content hr9">
                     <div class="description">
                         Tools used : <br>
                         <ul class="ui list">` + ptool +`</ul>

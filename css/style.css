@@ -13,7 +13,7 @@
 }
 
 .language-label{
-    font-size: 0.7em;
+    font-size: 0.9rem;
     font-weight: 100;
 }
 
@@ -41,21 +41,17 @@
     color: #FE9A76;
 }
 
-.h150{
-    height: 150px;
+.hr12{
+    height: 12rem;
 }
 
-.h130{
-    height: 130px
-}
-
-.h100{
-    height: 100px;
+.hr9{
+    height: 9rem
 }
 
 .designation-label{
     font-size: 1.5rem !important;
-    margin-top: 20px;
+    margin-top: 1.5rem;
     font-weight: 700;
 }
 
@@ -66,12 +62,12 @@
 }
 
 .mastfoot .list .label{
-    margin-top: 30px;
+    margin-top: 2rem;
 }
 
 .mastfoot .list .label {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
 }
 
 .hidden.menu {
@@ -80,28 +76,36 @@
 
 .ui.segment {
     min-height: 105vh;
-    padding: 1em 0em;
+    padding: 1rem 0rem;
 }
 
 .masthead h1.ui.header {
     margin-top: 25vh;
-    margin-bottom: 0em;
+    margin-bottom: 0rem;
     font-family: "Bitter";
-    font-size: 5.4em;
+    font-size: 6.2rem;
 }
 
 .masthead h2 {
-    font-size: 1.7em;
+    font-size: 2rem;
     font-weight: normal;
 }
 
 .ui.vertical.stripe {
-    padding: 8em 0em;
+    padding: 8rem 0rem;
 }
 
 .secondary.pointing.menu .toc.item {
     display: none;
     border-bottom: none;
+}
+
+.meta {
+    margin-top: 0.5rem;
+}
+
+.card .content:not(.hr9) .description  {
+    margin-top: 1rem !important;
 }
 
 @media only screen and (max-width: 745px) {
@@ -125,15 +129,15 @@
     }
 
     .masthead h2 {
-        margin-top: 0.5em;
-        font-size: 1.5em;
+        margin-top: 0.5rem;
+        font-size: 1.5rem;
     }
 
-    .h150{
+    .hr12 {
         height: auto;
     }
 
-    .h130{
+    .hr9 {
         height: auto;
     }
 }
