@@ -122,7 +122,6 @@ function achievementsGen(colno) {
     return achiev_html;
 }
 
-
 function addColumns() {
     addSection("Contacts", 1, contactsSecGen);
     addSection("Technical Skills", 1, skillsGen, 0);
@@ -138,4 +137,7 @@ function addColumns() {
 
 $(document).ready(function() {
     addColumns();
+    $("#print_btn").click(function(){
+        window.print();
+    });
 });

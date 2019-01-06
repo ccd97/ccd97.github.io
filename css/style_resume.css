@@ -5,7 +5,7 @@
     color: #0E6EB8 !important;
 }
 
-html { 
+html {
     font-size: 1vw;
 }
 
@@ -20,7 +20,7 @@ a {
     margin-right: 15vw;
 }
 
-.print-area {
+.print-seg {
     height: calc(70vw * 297/210);
     overflow: hidden;
 }
@@ -132,10 +132,16 @@ h1.ui.header {
     margin-bottom: 1.5rem;
 }
 
+.overlay {
+    position: fixed;
+    top: 5vh;
+    right: -0.2vw;
+}
+
 @media only screen and (max-width: 745px) {
 
-    html { 
-        font-size: 1.2vw; 
+    html {
+        font-size: 1.2vw;
     }
 
     .main-container {
@@ -143,8 +149,30 @@ h1.ui.header {
         margin-right: 7.5vw;
     }
 
-    .print-area {
+    .print-seg {
         height: calc(85vw * 297/210);
     }
 
+}
+
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+@media print {
+    body * { visibility: hidden; }
+    #print-area * { visibility: visible; }
+    html {
+        font-size: 1.49vw;
+    }
+    .main-container {
+        margin: 0;
+    }
+    .print-seg {
+        height: calc(100vw * 297/210);
+    }
+    .name-header {
+        margin-top: 2rem;
+    }
 }
