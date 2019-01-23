@@ -46,7 +46,7 @@ skills = [
             "Android Development",
             "Django/Web Development",
             "Competitive Programming",
-            "Data Science"
+            "Debugging and Testing"
         ]
     },
     {
@@ -120,7 +120,7 @@ projects = [
     },
     {
         name: "VC–chain",
-        descr: "version control using block–chain",
+        descr: "version control using block-chain",
         for: "Web technology project",
         year: "2017",
         link: "github.com/ccd97/VC–chain"
