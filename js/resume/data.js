@@ -84,31 +84,31 @@ education = [
         duration: "2013 – 2015",
         gradetype: "Score",
         gradevalue: "87.54%"
-    },
-    {
-        degree: "Secondary School Certificate",
-        school: "St. Anthony Convent School, Vasai",
-        duration: "2003 – 2013",
-        gradetype: "Score",
-        gradevalue: "95.82%"
-    },
+    }
 ]
 
 projects = [
     {
-        name: "Reinforced Roads",
-        descr: "intelligent system for accident management",
-        for: "AngelHack Hackathon",
-        year: "2018",
-        rank: "IBM call for code prize",
-        link: "hackathon.io/reinforced–roads"
-    },
-    {
         name: "User authentication based on keystroke dynamics",
+        descr: "using neural networks (GANs)",
         for: "Smart India Hackathon",
         year: "2017",
         rank: "Top 8",
-        link: "github.com/noddyaf–sih–2017"
+        link: "github.com/noddyaf-sih-2017"
+    },
+    {
+        name: "SmartLanes",
+        descr: "authentication/transactions using BLE beacons",
+        for: "Rajasthan Hackathon 4.0",
+        year: "2018",
+        link: "github.com/ccd97/SmartLanes"
+    },
+    {
+        name: "VC–chain",
+        descr: "version control using block-chain with good UI",
+        for: "Web technology project",
+        year: "2017",
+        link: "github.com/ccd97/VC-chain"
     },
     {
         name: "Citizen Service Android app",
@@ -119,25 +119,26 @@ projects = [
         link: "github.com/ccd97/CitizenService"
     },
     {
-        name: "VC–chain",
-        descr: "version control using block-chain",
-        for: "Web technology project",
-        year: "2017",
-        link: "github.com/ccd97/VC–chain"
-    },
-    {
-        name: "SmartLanes",
-        descr: "transactions using BLE beacons",
-        for: "Rajasthan Hackathon 4.0",
+        name: "Reinforced Roads",
+        descr: "intelligent system for accident management",
+        for: "AngelHack Hackathon",
         year: "2018",
-        link: "github.com/ccd97/SmartLanes"
+        rank: "IBM call for code prize",
+        link: "hackathon.io/reinforced-roads"
     },
     {
         name: "CP–test",
-        descr: "testcase generator and evaluator",
+        descr: "testcase generator, comparator and evaluator",
         for: "Personal project",
         year: "2017",
-        link: "github.com/ccd97/CP–test"
+        link: "github.com/ccd97/CP-test"
+    },
+    {
+        name: "LineageOS",
+        descr: "open source contribution to android custom OS development",
+        for: "Device mantainer",
+        year: "2017",
+        link: "review.lineageos.org/q/owner:dcunha.cyprien@gmail.com"
     }
 
 ]

@@ -97,7 +97,7 @@ function projectsGen(colno) {
     for(let p of projects){
         first_line = p.name + (("descr" in p)?" – "+p.descr:"");
         second_line = p.for + " – " + p.year;
-        third_line = `<a href="https://` + p.link + `">` +  p.link + `</a>`;
+        third_line = `<a href="http://` + p.link + `">` +  p.link + `</a>`;
         projects_html += `
             <div class="item bit-spaced">
                 <div class="content">
