@@ -134,10 +134,40 @@ function addColumns() {
     addSection("Achievements", 2, achievementsGen);
 }
 
+function addDownloadWIPModal() {
+    var modal_html = `
+        <div class="ui mini modal downloadwip">
+            <div class="header">Download</div>
+            <div class="content">
+                <div>Download resume is WIP</div>
+                <div>For now click Print>'Save as PDF'</div>
+            </div>
+            <div class="actions">
+                <div class="ui approve button">OK</div>
+            </div>
+        </div>
+    `
+    $('#modals-conatiner').append(modal_html);
+}
 
-$(document).ready(function() {
-    addColumns();
+function addModals() {
+    addDownloadWIPModal();
+}
+
+function setupMenu() {
     $("#print_btn").click(function(){
         window.print();
     });
+    $("#download_btn").click(function(){
+        $('.mini.modal.downloadwip').modal('show');
+    });
+    $("#protfolio_btn").click(function(){
+        window.open('https://ccd97.github.io'); 
+    });
+}
+
+$(document).ready(function() {
+    addColumns();
+    addModals();
+    setupMenu();
 });
