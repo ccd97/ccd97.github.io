@@ -40,6 +40,17 @@ function setMenuScroll(){
     });
 }
 
+function setDimmer(mode){
+    if(mode){
+        $('.fullpage').hide();
+        $('.page.dimmer').dimmer('show');
+    }
+    else{
+        $('.page.dimmer').dimmer('hide');
+        $('.fullpage').show();
+    }
+}
+
 function formatDate(isodate) {
     var date = new Date(isodate);
     var monthNames = [
@@ -166,8 +177,10 @@ function preparePage(data) {
     setMenuScroll();
     addProjectCards(data.projects);
     addSkillCards(data.skills);
+    setDimmer(false);
 }
 
 $(document).ready(function() {
+    setDimmer(true);
     prepareData();
 });

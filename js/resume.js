@@ -1,3 +1,14 @@
+function setDimmer(mode){
+    if(mode){
+        $('.fullpage').hide();
+        $('.page.dimmer').dimmer('show');
+    }
+    else{
+        $('.page.dimmer').dimmer('hide');
+        $('.fullpage').show();
+    }
+}
+
 function addSection(title, colno, contentgen, data, genargs) {
     var section_html = `
         <div class="section">
@@ -182,8 +193,10 @@ function preparePage(data) {
     addColumns(data);
     addModals();
     setupMenu();
+    setDimmer(false);
 }
 
 $(document).ready(function() {
+    setDimmer(true);
     prepareData();
 });
