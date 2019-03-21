@@ -1,10 +1,10 @@
-function addSection(title, colno, contentgen, genargs) {
+function addSection(title, colno, contentgen, data, genargs) {
     var section_html = `
         <div class="section">
             <h3>` + title + `</h3>
             <div class="ui list">`
 
-    section_html += contentgen(genargs);
+    section_html += contentgen(data, genargs);
 
     section_html += `
             </div>
@@ -13,7 +13,7 @@ function addSection(title, colno, contentgen, genargs) {
     $('#res_col' + colno).append(section_html);
 }
 
-function contactsSecGen() {
+function contactsSecGen(contacts) {
     var contacts_html = "";
     for(let c of contacts){
         contacts_html += `
@@ -27,7 +27,7 @@ function contactsSecGen() {
     return contacts_html;
 }
 
-function skillsGen(skilltype) {
+function skillsGen(skills, skilltype) {
     var skill_html = ""
     for(let s of skills[skilltype].value){
         skill_html += `
@@ -39,7 +39,7 @@ function skillsGen(skilltype) {
     return skill_html;
 }
 
-function responsibilitiesGen(colno) {
+function responsibilitiesGen(responsibilities) {
     var resp_html = ""
     for(let r of responsibilities){
         resp_html += `
@@ -54,7 +54,7 @@ function responsibilitiesGen(colno) {
     return resp_html;
 }
 
-function experiencesGen() {
+function experiencesGen(experiences) {
     var experiences_html = ""
     for(let e of experiences){
         experiences_html += `
@@ -72,7 +72,7 @@ function experiencesGen() {
     return experiences_html;
 }
 
-function educationGen(colno) {
+function educationGen(education) {
     var education_html = ""
     for(let e of education){
         education_html += `
@@ -92,7 +92,7 @@ function educationGen(colno) {
     return education_html;
 }
 
-function projectsGen(colno) {
+function projectsGen(projects) {
     var projects_html = ""
     for(let p of projects){
         first_line = p.name + (("descr" in p)?" – "+p.descr:"");
@@ -110,7 +110,7 @@ function projectsGen(colno) {
     return projects_html;
 }
 
-function achievementsGen(colno) {
+function achievementsGen(achievements) {
     var achiev_html = ""
     for(let a of achievements){
         achiev_html += `
@@ -122,16 +122,16 @@ function achievementsGen(colno) {
     return achiev_html;
 }
 
-function addColumns() {
-    addSection("Contacts", 1, contactsSecGen);
-    addSection("Technical Skills", 1, skillsGen, 0);
-    addSection("Soft Skills", 1, skillsGen, 1);
-    addSection("Responsibilities taken", 1, responsibilitiesGen);
+function addColumns(data) {
+    addSection("Contacts", 1, contactsSecGen, data.contacts);
+    addSection("Technical Skills", 1, skillsGen, data.skills, 0);
+    addSection("Soft Skills", 1, skillsGen, data.skills, 1);
+    addSection("Responsibilities taken", 1, responsibilitiesGen, data.responsibilities);
 
-    addSection("Experiences", 2, experiencesGen);
-    addSection("Education", 2, educationGen);
-    addSection("Projects", 2, projectsGen);
-    addSection("Achievements", 2, achievementsGen);
+    addSection("Experiences", 2, experiencesGen, data.experiences);
+    addSection("Education", 2, educationGen, data.education);
+    addSection("Projects", 2, projectsGen, data.projects);
+    addSection("Achievements", 2, achievementsGen, data.achievements);
 }
 
 function addDownloadWIPModal() {
@@ -162,12 +162,28 @@ function setupMenu() {
         $('.mini.modal.downloadwip').modal('show');
     });
     $("#protfolio_btn").click(function(){
-        window.open('https://ccd97.github.io'); 
+        window.open('https://ccd97.github.io');
     });
 }
 
-$(document).ready(function() {
-    addColumns();
+function prepareData() {
+    $.getJSON("https://ccd97.pythonanywhere.com/resume_data/")
+        .done(function(json) {
+            preparePage(json);
+        })
+        .fail(function() {
+            $.getJSON('data/fallback_resume_data.json', function(json) {
+                preparePage(json);
+            });
+        });
+}
+
+function preparePage(data) {
+    addColumns(data);
     addModals();
     setupMenu();
+}
+
+$(document).ready(function() {
+    prepareData();
 });

@@ -54,7 +54,7 @@ function formatDate(isodate) {
     return day + ' ' + monthNames[monthIndex] + ' ' + year;
 }
 
-function addProjectCards(){
+function addProjectCards(projects){
     for(let p in projects){
         prepo = projects[p].repo;
         pname = ("name" in projects[p])?projects[p].name:prepo;
@@ -116,7 +116,7 @@ function addProjectCards(){
     }
 }
 
-function addSkillCards(){
+function addSkillCards(skills){
 
     first_card = true;
 
@@ -149,9 +149,25 @@ function addSkillCards(){
     }
 }
 
-$(document).ready(function() {
+function prepareData() {
+    $.getJSON("https://ccd97.pythonanywhere.com/protfolio_data/")
+        .done(function(json) {
+            preparePage(json);
+        })
+        .fail(function() {
+            $.getJSON('data/fallback_protfolio_data.json', function(json) {
+                preparePage(json);
+            });
+        });
+}
+
+function preparePage(data) {
     setVisibilityOfMenu();
     setMenuScroll();
-    addProjectCards();
-    addSkillCards();
+    addProjectCards(data.projects);
+    addSkillCards(data.skills);
+}
+
+$(document).ready(function() {
+    prepareData();
 });
