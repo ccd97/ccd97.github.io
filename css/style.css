@@ -108,6 +108,15 @@
     margin-top: 1rem !important;
 }
 
+.icount {
+    margin-left: 0.3rem;
+    margin-right: 0.6rem;
+}
+
+.star.icon, .fork.icon {
+    pointer-events:none;
+}
+
 @media only screen and (max-width: 745px) {
 
     .designation-label{

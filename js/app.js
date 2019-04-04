@@ -81,8 +81,10 @@ function addProjectCards(projects){
             $.get("https://api.github.com/repos/ccd97/"  + prepo, function(json){
                 $('#udate-' + p).append("Updated on " + formatDate(json.pushed_at));
                 if(json.stargazers_count > 0 || json.forks_count > 0){
-                    $('#stat-' + p).append(`<i class="empty star icon"></i>` + json.stargazers_count);
-                    $('#stat-' + p).append(`<i class="fork icon"></i>` + json.forks_count);
+                    star_count_html = `<span class="icount">` + json.stargazers_count + `</span>`
+                    fork_count_html = `<span class="icount">` + json.forks_count + `</span>`
+                    $('#stat-' + p).append(`<i class="fitted star outline icon"></i>` + star_count_html);
+                    $('#stat-' + p).append(`<i class="fitted fork icon"></i>` + fork_count_html);
                 }
                 $('#stat-' + p).append(`<a class="right floated" href="`
                     + json.html_url +`" target="_blank">Visit <i class="github icon"></i></a>`);
