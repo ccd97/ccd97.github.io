@@ -118,7 +118,7 @@ function addProjectCards(projects){
                 </div>
                 <div class="content hr9">
                     <div class="description">
-                        Tools used : <br>
+                        Tools/Technologies used : <br>
                         <ul class="ui list">` + ptool +`</ul>
                     </div>
                 </div>

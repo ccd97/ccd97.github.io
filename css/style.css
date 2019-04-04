@@ -29,16 +29,24 @@
     color: #008080;
 }
 
-.C\+\+{
+.C\+\+, .C{
     color: #FF1493;
 }
 
-.Android{
+.Java{
     color: #A52A2A;
+}
+
+.Android{
+    color: #B03060;
 }
 
 .Javascript{
     color: #FE9A76;
+}
+
+.Misc{
+    color: #B413EC;
 }
 
 .hr12{
