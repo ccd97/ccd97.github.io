@@ -124,8 +124,12 @@ h1.ui.header {
     margin-top: -0.2rem;
 }
 
-.mb8 {
-    margin-bottom: 0.8rem;
+.mb7 {
+    margin-bottom: 0.7rem;
+}
+
+.mb10 {
+    margin-bottom: 1rem;
 }
 
 .mb15 {
@@ -164,7 +168,7 @@ h1.ui.header {
     body * { visibility: hidden; }
     #print-area * { visibility: visible; }
     html {
-        font-size: 1.5vw;
+        font-size: 1.45vw;
     }
     .main-container {
         margin: 0;

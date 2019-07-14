@@ -75,8 +75,8 @@ function experiencesGen(experiences) {
                         <div class="f5 fbold float-left">` + e.role + `</div>
                         <div class="fthin float-right">` + e.duration + `</div>
                     </div>
-                    <div class="mb8">` + e.firm + `</div>
-                    <div class="f-5">` + e.work + `</div>
+                    <div class="mb7">` + e.firm + `</div>
+                    <div class="f-5 mb10">` + e.work + `</div>
                 </div>
             </div>`
     }
