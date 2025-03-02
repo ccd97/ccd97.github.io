@@ -172,15 +172,19 @@ function setupMenu() {
 }
 
 function prepareData() {
-    $.getJSON("https://ccd97.pythonanywhere.com/resume_data/")
-        .done(function(json) {
+    $.ajax({
+        dataType: "json",
+        url: "https://api.jsonbin.io/v3/b/67c4a014acd3cb34a8f3b7d5/latest",
+        beforeSend: function(request) {
+            request.setRequestHeader("X-Access-Key", '$2a$10$IGIa3eWQp2.rF8i6nTNHwOCfkSRo3sGoe8U.J0XSiGLhHLH5rojl2');
+        },
+    }).done(function(json) {
+        preparePage(json.record);
+    }).fail(function() {
+        $.getJSON('data/fallback_resume_data.json', function (json) {
             preparePage(json);
-        })
-        .fail(function() {
-            $.getJSON('data/fallback_resume_data.json', function(json) {
-                preparePage(json);
-            });
         });
+    });
 }
 
 function preparePage(data) {
