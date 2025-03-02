@@ -1,16 +1,6 @@
 {
     "contacts":[
         {
-            "icon":"globe",
-            "text":"ccd97.github.io",
-            "url":"https://ccd97.github.io/"
-        },
-        {
-            "icon":"envelope",
-            "text":"dcunha.cyprien@gmail.com",
-            "url":"mailto:dcunha.cyprien@gmail.com"
-        },
-        {
             "icon":"linkedin",
             "text":"linkedin.com/in/ccd97",
             "url":"https://www.linkedin.com/in/ccd97/"
@@ -31,135 +21,120 @@
             "url":"https://www.codechef.com/users/ccd97"
         },
         {
-            "icon":"h square",
-            "text":"hackerrank.com/CCD_1997",
-            "url":"https://www.hackerrank.com/CCD_1997"
+            "icon":"code",
+            "text":"leetcode.com/u/ccd97",
+            "url":"https://leetcode.com/u/ccd97/"
         }
     ],
     "skills":[
-        {
-            "type":"Technical",
-            "value":[
-                "C++, Python, Java, Javascript",
-                "Data Structures and Algorithms",
-                "Deep/Machine Learning",
-                "Android Development",
-                "Django/Web Development",
-                "Competitive Programming",
-                "Debugging and Testing"
-            ]
-        },
-        {
-            "type":"Non–Technical",
-            "value":[
-                "Problem Solving",
-                "Strategic Planning",
-                "Leadership",
-                "Teamwork",
-                "Time management"
-            ]
-        }
+        "Java, TypeScript, JavaScript",
+        "C++, Python, Ruby",
+        "Guice / Dagger, Spring MVC, Rails",
+        "Junit, Mockito, Load & Canary testing",
+        "AWS Compute - Lambda, ECS, Fargate",
+        "AWS - Cloudformation, SQS, SNS, IAM, Cloudwatch",
+        "Databases -  DyanomoDB, RDS, Redshift, Athena",
+        "Storage - S3, AWS Timestream",
+        "Git, SQL, Amazon Profiler",
+        "ML - Tensorflow, AWS Forecast",
+        "Agile, Scrum, Amazon CI / CD",
+        "Domain driven design, Microservices design, Event-driven design",
+        "RESTful API design, Layered design"
     ],
     "experiences":[
         {
+            "role": "Software Development Engineer II",
+            "firm":"Amazon - Finance Automation",
+            "duration":"Dec 2021 – Present"
+
+        },
+        {
+            "role": "Software Development Engineer I",
+            "firm":"Amazon - Finance Automation",
+            "duration":"May 2019 – Nov 2021"
+
+        },
+        {
             "role":"C++ development Intern",
             "firm":"IRageCapital Advisory Pvt. Ltd., Mumbai",
-            "duration":"Jun 2017 – Aug 2017",
-            "work":"Developed a simulation environment for high frequency algorithmic training strategies"
+            "duration":"Jun 2017 – Aug 2017"
         }
     ],
     "education":[
         {
-            "degree":"Bachelor of Engineering, Major in Computer Science",
+            "degree":"Bachelor of Engineering, Computer Science",
             "school":"Dwarkadas J. Sanghvi College of Engineering, Mumbai",
             "duration":"2015 – 2019",
-            "gradetype":"CGPA",
-            "gradevalue":"9.08"
-        },
-        {
-            "degree":"Higher Secondary Certificate",
-            "school":"E.S. Andrades College of Science, Vasai",
-            "duration":"2013 – 2015",
-            "gradetype":"Score",
-            "gradevalue":"87.54%"
+            "grade":"CGPA: 9.08/10"
         }
     ],
     "projects":[
         {
-            "name":"Hunt for exoplanets",
-            "descr":"identifying exoplanets in astrophysical light curves",
-            "for":"Final year project",
-            "year":"2018",
-            "link":"github.com/ccd97/exoplanet-ml"
+            "name":"VendorHoldbacks 2.0 - Re-architecture",
+            "role":"Project co-lead",
+            "duration":"April 2021 - Feb 2024",
+            "description": [
+                "Deconstructed a monolithic system into 11 microservices to scale and handle upto 6M transactions at upto 2000 TPS from 20+ different sources.",
+                "Transformed the batch-based system into an event-driven architecture, reducing payment processing time from 24 hours to near real-time.",
+                "Replaced entire SQL-based processing with AWS serverless technologies improving data accuracy and transparency reducing reducing upto 23.5% annual vendor inquiries across 14+ countries."
+            ]
         },
         {
-            "name":"User authentication based on keystroke dynamics",
-            "descr":"using neural networks (GANs)",
-            "for":"Smart India Hackathon",
-            "year":"2017",
-            "rank":"Top 8",
-            "link":"github.com/noddyaf-sih-2017"
+            "name":"VendorHoldbacks - Rule Engine",
+            "role":"Project lead",
+            "duration":"May 2023 - Aug 2023",
+            "description": [
+                "Architected a high-performance Rule Engine, evaluating 5000+ concurrent rules with latency of 50ms and processing upto 2000 API calls per second",
+                "Developed self-service web portal for direct rule management by business users, reducing rule creation time from 4 weeks of dev effort to minutes.",
+                "Developed a versatile rule engine that handles any combination of business conditions using Drools framework."
+            ]
         },
         {
-            "name":"Citizen Service Android app",
-            "descr":"using deep learning",
-            "for":"Project Deep Blue",
-            "year":"2016",
-            "rank":"Awarded Superteam",
-            "link":"github.com/ccd97/CitizenService"
+            "name":"VendorHoldbacks - Seasonal Holdbacks",
+            "role":"Individual",
+            "duration":"July 2021 - Oct 2021",
+            "description": [
+                "Designed automated holdbacks featuring interactive seasonality configuration dashboard, streamlining vendor risk management across peak events (Prime day, black friday, holiday sales, etc.)",
+                "Implemented linear regression ML model to analyze 15+ months historical vendor behavior, automating risk assessment for 3,600+ vendors"
+            ]
         },
         {
-            "name":"SmartLanes",
-            "descr":"authentication/transactions using BLE beacons",
-            "for":"Rajasthan Hackathon 4.0",
-            "year":"2018",
-            "link":"github.com/ccd97/SmartLanes"
+            "name":"Approvals - Emails",
+            "role":"Team project",
+            "duration":"Dec 2024 - Feb 2025",
+            "description": [
+                "Designed flexible APIs and data models allowing client teams to fully customize email templates, reminder schedules, and notification workflows while maintaining audit history of all email communications"
+            ]
         },
         {
-            "name":"LineageOS",
-            "descr":"open source contribution to android custom OS development",
-            "for":"Device mantainer",
-            "year":"2017",
-            "link":"review.lineageos.org/q/owner:dcunha.cyprien@gmail.com"
-        },
-        {
-            "name":"CP–test",
-            "descr":"testcase generator, comparator and evaluator",
-            "for":"Personal project",
-            "year":"2017",
-            "link":"github.com/ccd97/CP-test"
-        },
-        {
-            "name":"VC–chain",
-            "descr":"version control using block-chain with good UI",
-            "for":"Web technology project",
-            "year":"2017",
-            "link":"github.com/ccd97/VC-chain"
-        }
-    ],
-    "responsibilities":[
-        {
-            "of":"DJSCE Programming Club",
-            "role":"Vice Chairperson",
-            "duration":"Aug 2018 – Present"
-        },
-        {
-            "of":"DJSCE Unicode",
-            "role":"Android Team Head",
-            "duration":"Aug 2017 – Aug 2018 "
-        },
-        {
-            "of":"DJSCE ACM",
-            "role":"Co–InfoTech Head",
-            "duration":"Oct 2016 – Aug 2017"
+            "name":"Stock market simulator",
+            "role":"Individual",
+            "duration":"Jun 2017 – Aug 2017",
+            "description": [
+                "Developed a high-performance market replay simulator in C++ achieving <50 nanosecond latency per market execution, enabling backtesting of trading strategies against historical market data"
+            ]
         }
     ],
     "achievements":[
-        "Represented College at ACM ICPC for 2 year at 3 regionals",
-        "IBM's Call for Code Prize – AngelHack 2018 ($1000 prize)",
+        "Amazon FinAuto Hackathon 2023 finalist",
+        "FinAuto SDE recognition award 2021 and 2022",
         "TopCoder Development Challenge – 3rd prize ($1100 prize)",
-        "Top 6 in Smart India Hackathon – among 50+ (overall 1200+) teams",
-        "Super Team in Deep Blue (2016) – among 100+ teams",
-        "HackerRank – 1 Gold 3 Silver; Codechef – 5 ☆☆☆☆☆"
+        "IBM's Call for Code Prize – AngelHack 2018 ($1000 prize)",
+        "Smart India Hackathon 2016 finalist",
+        "HackerRank – 1 Gold 3 Silver; Codechef – 5 ☆"
+    ],
+    "seo": [
+        " Java, Python, C++, JavaScript, SQL, Angular, Spring, Django,  MySQL, PostgreSQL, MongoDB, AWS, Azure, Google Cloud",
+        " Docker, Kubernetes, Git, Jenkins,  REST APIs, Microservices,  Software Development, Software Engineering,  Software Architecture",
+        " System Design, Database Design,  Object-Oriented Programming (OOP),  Agile, Scrum, DevOps,  CI/CD,  Testing, Debugging, Troubleshooting",
+        " Algorithms, Data Structures,  Web Development,  Mobile Development, Android Development, Cloud Computing,  SDLC,  Technical Leadership",
+        " Web Services,  Integration,  Software Design Patterns,  Version Control,  Quality Assurance,  Performance Optimization",
+        " Scalability,  Security,  Linux,  Windows,  Scripting,  Frameworks,  Libraries,  Database Management,  Technical Documentation",
+        " API Integration,  Full Stack Development,  Backend Development,  Frontend Development",
+        " Agile, Scrum, SDLC, TDD, Waterfall,  CI/CD Pipelines,  DevOps Practices,  Software Development Life Cycle",
+        " Leadership, Team Management, Mentoring, Collaboration, Communication, Problem-solving, Critical Thinking, Innovation,  Developed, Architected",
+        " Implemented, Optimized, Designed, Deployed, Led, Managed, Mentored, Integrated, Automated, Streamlined, Refactored, Debugged, Evaluated, Spearheaded, Resolved",
+        " EC2, Lambda, ECS, EKS, S3, RDS, DynamoDB, VPC, API Gateway, CloudFormation, CloudWatch,  Auto Scaling, Load Balancing, Serverless, Containers",
+        " Microservices,  DevOps,  CI/CD,  Agile,  System Design,  Scalability,  Performance Optimization,  Security,  AWS CLI,  AWS SDK"
     ]
 }
