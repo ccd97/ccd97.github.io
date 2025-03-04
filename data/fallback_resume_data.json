@@ -70,48 +70,48 @@
     ],
     "projects":[
         {
-            "name":"VendorHoldbacks 2.0 - Re-architecture",
+            "name":"Amazon VendorHoldbacks: Re-Architecture",
             "role":"Project co-lead",
             "duration":"April 2021 - Feb 2024",
             "description": [
-                "Deconstructed a monolithic system into 11 microservices to scale and handle upto 6M transactions at upto 2000 TPS from 20+ different sources.",
-                "Transformed the batch-based system into an event-driven architecture, reducing payment processing time from 24 hours to near real-time.",
-                "Replaced entire SQL-based processing with AWS serverless technologies improving data accuracy and transparency reducing reducing upto 23.5% annual vendor inquiries across 14+ countries."
+                "Deconstructed a monolithic system into <b>11 microservices</b> to scale and handle up to <b>6M transactions worth $2.1B</b> at up to 2000 TPS from <b>20+ different sources.</b>.",
+                "Transformed the batch-based system into an event-driven architecture, reducing payment processing time <b>from 24 hours to near real-time.</b>",
+                "Replaced entire SQL-based processing with AWS serverless technologies, improving data accuracy and transparency, <b>reducing annual vendor inquiries</b> by up to <b>23.5%</b> across <b>14+ countries.</b>."
             ]
         },
         {
-            "name":"VendorHoldbacks - Rule Engine",
+            "name":"Amazon VendorHoldbacks: Rule Engine",
             "role":"Project lead",
             "duration":"May 2023 - Aug 2023",
             "description": [
-                "Architected a high-performance Rule Engine, evaluating 5000+ concurrent rules with latency of 50ms and processing upto 2000 API calls per second",
-                "Developed self-service web portal for direct rule management by business users, reducing rule creation time from 4 weeks of dev effort to minutes.",
-                "Developed a versatile rule engine that handles any combination of business conditions using Drools framework."
+                "Architected a high-performance Rule Engine, evaluating <b>5000+ concurrent rules</b> with latency of <b>50ms</b> and processing up to <b>2000 API calls per second.</b>",
+                "Developed a self-service web portal for rule management by business users, reducing rule creation time from <b>4 weeks of development effort to minutes.</b>",
+                "Developed a versatile rule engine that handles <b>any combination</b> of business conditions using the Drools framework."
             ]
         },
         {
-            "name":"VendorHoldbacks - Seasonal Holdbacks",
+            "name":"Amazon VendorHoldbacks: Seasonal Holdbacks",
             "role":"Individual",
             "duration":"July 2021 - Oct 2021",
             "description": [
-                "Designed automated holdbacks featuring interactive seasonality configuration dashboard, streamlining vendor risk management across peak events (Prime day, black friday, holiday sales, etc.)",
-                "Implemented linear regression ML model to analyze 15+ months historical vendor behavior, automating risk assessment for 3,600+ vendors"
+                "Designed <b>automated holdbacks</b> with an interactive seasonality <b>configuration dashboard</b>, streamlining vendor risk management across <b>peak events</b>. (Prime Day, Black Friday, holiday sales, etc.)",
+                "Implemented a <b>linear regression</b> ML model to analyze 15+ months of historical vendor behavior, automating <b>risk assessment for 3600+ vendors.</b>"
             ]
         },
         {
-            "name":"Approvals - Emails",
+            "name":"Amazon Approvals: Emails",
             "role":"Team project",
             "duration":"Dec 2024 - Feb 2025",
             "description": [
-                "Designed flexible APIs and data models allowing client teams to fully customize email templates, reminder schedules, and notification workflows while maintaining audit history of all email communications"
+                "Built highly configurable email orchestration system handling approval and reminder emails for sending up to <b>200K approval emails per day</b>."
             ]
         },
         {
-            "name":"Stock market simulator",
+            "name":" IRageCapital: Stock market simulator",
             "role":"Individual",
             "duration":"Jun 2017 – Aug 2017",
             "description": [
-                "Developed a high-performance market replay simulator in C++ achieving <50 nanosecond latency per market execution, enabling backtesting of trading strategies against historical market data"
+                "Developed a high-performance market replay simulator in C++, achieving <b><50 nanosecond latency</b> per market execution, enabling <b>backtesting</b> of trading strategies against historical market data."
             ]
         }
     ],
@@ -120,8 +120,7 @@
         "FinAuto SDE recognition award 2021 and 2022",
         "TopCoder Development Challenge – 3rd prize ($1100 prize)",
         "IBM's Call for Code Prize – AngelHack 2018 ($1000 prize)",
-        "Smart India Hackathon 2016 finalist",
-        "HackerRank – 1 Gold 3 Silver; Codechef – 5 ☆"
+        "Smart India Hackathon 2016 finalist"
     ],
     "seo": [
         " Java, Python, C++, JavaScript, SQL, Angular, Spring, Django,  MySQL, PostgreSQL, MongoDB, AWS, Azure, Google Cloud",

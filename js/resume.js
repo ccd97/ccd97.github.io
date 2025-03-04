@@ -31,7 +31,7 @@ function contactsSecGen(contacts) {
             <div class="item bit-spaced">
                 <i class='` + c.icon + ` icon pl2'></i>
                 <div class="content">
-                    <a href='` + c.url +`' class="f10">` + c.text + `</a>
+                    <a href='` + c.url +`' class="txt f10">` + c.text + `</a>
                 </div>
             </div>`;
     }
@@ -44,7 +44,7 @@ function skillsGen(skills) {
         skill_html += `
             <div class="item bit-spaced">
                 <i class="angle right icon"></i>
-                <div class="content f10"> ` + s + `</div>
+                <div class="content txt f10"> ` + s + `</div>
             </div>`;
     }
     return skill_html;
@@ -60,7 +60,7 @@ function experiencesGen(experiences) {
                         <div class="fbold f20 float-left">` + e.firm + `</div>
                         <div class="fthin f10 float-right">` + e.duration + `</div>
                     </div>
-                    <div class="f15">` + e.role + `</div>
+                    <div class="f15 txt">` + e.role + `</div>
                 </div>
             </div>`
     }
@@ -78,7 +78,7 @@ function educationGen(education) {
                         <div class="fthin f10 float-right">` + e.duration + `</div>
                     </div>
                     <div class="float-container mt2">
-                        <div class="float-left f15">` + e.degree + `</div>
+                        <div class="float-left txt f10">` + e.degree + `</div>
                         <div class="float-right f10">` + e.grade + `</div>
                     </div>
                 </div>
@@ -96,15 +96,15 @@ function projectsGen(projects) {
             desc_html += `
             <div class="item spaced">
                 <i class='angle right icon'></i>
-                <div class="content f10">` + desc_line + `</div>
+                <div class="content txt f5">` + desc_line + `</div>
             </div>`;
         }
         projects_html += `
             <div class="item">
                 <div class="content">
                     <div class="float-container mt4">
-                        <div class="fbold f20 float-left">` + first_line + `</div>
-                        <div class="fthin float-right">` + p.duration + `</div>
+                        <div class="fbold f15 float-left">` + first_line + `</div>
+                        <div class="fthin f-5 float-right">` + p.duration + `</div>
                     </div>
                 </div>
             </div>`
@@ -119,7 +119,7 @@ function achievementsGen(achievements) {
         achiev_html += `
             <div class="item spaced">
                 <i class='angle right icon'></i>
-                <div class="content f10">` + a + `</div>
+                <div class="content txt f10">` + a + `</div>
             </div>`;
     }
     return achiev_html;

@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Bitter:700');
-@import url('https://fonts.googleapis.com/css?family=Lato:300');
 
 .color-blue {
     color: #0E6EB8 !important;
@@ -37,7 +36,16 @@ a {
 h1.ui.header {
     font-size: 5rem;
     margin-bottom: 0rem;
-    font-family: "Bitter";
+    font-family: "Bitter", sans-serif;
+}
+
+.txt {
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 400;
+}
+
+.txt > b {
+    font-weight: 550;
 }
 
 .designation-label {
@@ -127,11 +135,15 @@ h1.ui.header {
 }
 
 .fthin {
-    font-weight: 100;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 200;
+    font-variation-settings: "wdth" 100;
 }
 
 .fbold {
-    font-weight: 700;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 650;
+    font-variation-settings: "wdth" 90;
 }
 
 .mt2 {
