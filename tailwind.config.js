@@ -1,21 +1,32 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class",
   content: ["./index.html", "./resume.html", "./src/**/*.{ts,tsx}"],
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: {
+        DEFAULT: "1rem",
+        sm: "1.5rem",
+        lg: "2rem",
+      },
       screens: {
         "2xl": "1400px",
       },
     },
     extend: {
       fontFamily: {
-        bitter: ["Bitter", "serif"],
-        noto: ['"Noto Sans"', "sans-serif"],
+        serif: ['"Sofia"','"Instrument Serif"', "serif"],
+        sans: ['"Inter"', "system-ui", "sans-serif"],
+        mono: ['"JetBrains Mono"', "ui-monospace", "monospace"],
+        bitter: ['"Instrument Serif"', "serif"],
+        noto: ['"Inter"', "system-ui", "sans-serif"],
+        hero: ['"Mozilla Headline"', "cursive"],
+        display: ['"Playfair Display"', "serif"],
+        card: ['"Instrument Serif"', "serif"],
       },
       colors: {
-        brand: { blue: "#0E6EB8" },
+        brand: "hsl(var(--accent))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -32,6 +43,7 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+          soft: "hsl(var(--accent-soft))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",

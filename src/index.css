@@ -1,5 +1,10 @@
-@import url("https://fonts.googleapis.com/css?family=Bitter:700");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wdth,wght@62.5..100,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sofia&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yatra+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Mozilla+Headline:wght@200..700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,83 +12,78 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 207 86% 38%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 7%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 7%;
+    --popover: 0 0% 98%;
+    --popover-foreground: 0 0% 7%;
+    --primary: 220 72% 42%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 94%;
+    --secondary-foreground: 0 0% 7%;
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 42%;
+    --accent: 220 72% 42%;
+    --accent-foreground: 0 0% 98%;
+    --accent-soft: 220 70% 92%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 207 86% 38%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 220 72% 42%;
     --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 6% 7%;
+    --foreground: 36 15% 90%;
+    --card: 240 6% 10%;
+    --card-foreground: 36 15% 90%;
+    --popover: 240 6% 10%;
+    --popover-foreground: 36 15% 90%;
+    --primary: 220 78% 64%;
+    --primary-foreground: 240 6% 7%;
+    --secondary: 240 6% 12%;
+    --secondary-foreground: 36 15% 90%;
+    --muted: 240 6% 12%;
+    --muted-foreground: 36 8% 62%;
+    --accent: 220 78% 64%;
+    --accent-foreground: 240 6% 7%;
+    --accent-soft: 220 40% 14%;
+    --destructive: 0 63% 45%;
+    --destructive-foreground: 36 15% 90%;
+    --border: 240 6% 16%;
+    --input: 240 6% 16%;
+    --ring: 220 78% 64%;
   }
 
   * {
     @apply border-border;
   }
+  html {
+    scroll-snap-type: y proximity;
+  }
   body {
     @apply bg-background text-foreground antialiased;
+  }
+  section {
+    scroll-snap-align: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-snap-type: none;
   }
 }
 
 @layer utilities {
   .text-brand {
-    color: #0e6eb8;
+    color: hsl(var(--accent));
   }
-  .lang-python {
-    color: #016936;
-  }
-  .lang-django {
-    color: #008080;
-  }
-  .lang-cpp,
-  .lang-c {
-    color: #ff1493;
-  }
-  .lang-java {
-    color: #a52a2a;
-  }
-  .lang-android {
-    color: #b03060;
-  }
-  .lang-javascript {
-    color: #fe9a76;
-  }
-  .lang-misc {
-    color: #b413ec;
+  .bg-accent-soft {
+    background-color: hsl(var(--accent-soft));
   }
 }
 
-@media print {
-  @page {
-    size: A4 portrait;
-    margin: 0;
-  }
-  body * {
-    visibility: hidden;
-  }
-  #print-area,
-  #print-area * {
-    visibility: visible;
-  }
-  #print-area {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-  }
-  .no-print {
-    display: none !important;
-  }
-}

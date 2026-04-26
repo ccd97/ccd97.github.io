@@ -27,32 +27,33 @@
         }
     ],
     "skills":[
-        "Java, TypeScript, JavaScript",
-        "C++, Python, Ruby",
-        "Guice / Dagger, Spring MVC, Rails",
-        "Junit, Mockito, Load & Canary testing",
-        "AWS Compute - Lambda, ECS, Fargate",
-        "AWS - Cloudformation, SQS, SNS, IAM, Cloudwatch",
-        "Databases -  DyanomoDB, RDS, Redshift, Athena",
-        "Storage - S3, AWS Timestream",
-        "Git, SQL, Amazon Profiler",
-        "ML - Tensorflow, AWS Forecast",
-        "Agile, Scrum, Amazon CI / CD",
-        "Domain driven design, Microservices design, Event-driven design",
-        "RESTful API design, Layered design"
+        "Python, Java, C++, TypeScript, SQL",
+        "Lambda, ECS, SQS/SNS, DynamoDB, S3",
+        "RDS, Redshift, Step Fn, IAM, ",
+        "GCP - Cloud SQL, GKE, Vertex AI",
+        "LLMs, RAG, Prompt Engineering, Agents",
+        "AWS Bedrock, AgentCore, LangChain, Tensorflow, PyTorch",
+        "Distributed Systems, Microservices",
+        "Event-Driven, Domain-Driven, REST APIs",
+        "Docker, Kubernetes, Jenkins, Spinnaker",
+        "CloudFormation, Terraform, CI/CD, Git",
+        "Spring, Guice, Dagger, JUnit, Gradle"
     ],
     "experiences":[
         {
+            "role": "Senior Software Development Engineer",
+            "firm":"Salesforce - Core Infra",
+            "duration":"Nov 2025 – Present"
+        },
+        {
             "role": "Software Development Engineer II",
             "firm":"Amazon - Finance Automation",
-            "duration":"Dec 2021 – Present"
-
+            "duration":"Dec 2021 – Nov 2025"
         },
         {
             "role": "Software Development Engineer I",
             "firm":"Amazon - Finance Automation",
-            "duration":"May 2019 – Nov 2021"
-
+            "duration":"May 2019 – Dec 2021"
         },
         {
             "role":"C++ development Intern",
@@ -70,70 +71,77 @@
     ],
     "projects":[
         {
-            "name":"Amazon VendorHoldbacks: Re-Architecture",
-            "role":"Project co-lead",
-            "duration":"April 2021 - Feb 2024",
+            "name":"Salesforce: Core & Platform Services GCP Uplift",
             "description": [
-                "Deconstructed a monolithic system into <b>11 microservices</b> to scale and handle up to <b>6M transactions worth $2.1B</b> at up to 2000 TPS from <b>20+ different sources.</b>.",
-                "Transformed the batch-based system into an event-driven architecture, reducing payment processing time <b>from 24 hours to near real-time.</b>",
-                "Replaced entire SQL-based processing with AWS serverless technologies, improving data accuracy and transparency, <b>reducing annual vendor inquiries</b> by up to <b>23.5%</b> across <b>14+ countries.</b>."
+                "Ported AWS-native core services to GCP — shipped <b>Key Broker, DocGen, and PDFGen</b> live on GCP.",
+                "First <b>AWS-to-GCP uplifts</b> in the platform team and wider org."
+            ]
+        },
+        {
+            "name":"Amazon VendorHoldbacks: Re-Architecture",
+            "description": [
+                "Drove re-architecture from monolith to <b>11 microservices</b>, leading a team of 3 developers, enabling <b>6M transactions worth $2.1B</b> at 2000 TPS.",
+                "Transformed batch processing to event-driven architecture, slashing processing time <b>from 24h to near real-time</b> and reducing vendor inquiries by <b>23.5%</b> across <b>14+ countries.</b>"
+            ]
+        },
+        {
+            "name":"Amazon: LLM-driven Financial Reconciliation Engine",
+            "description": [
+                "Developed an LLM-driven Financial Reconciliation Engine processing up to <b>10M records per day</b>, accelerating anomaly detection and reducing manual work by <b>65%</b>.",
+                "Utilized <b>RAG</b> against historical customer notes and <b>LLM-based semantic mapping</b> to achieve a recon accuracy of <b>67%</b>."
             ]
         },
         {
             "name":"Amazon VendorHoldbacks: Rule Engine",
-            "role":"Project lead",
-            "duration":"May 2023 - Aug 2023",
             "description": [
-                "Architected a high-performance Rule Engine, evaluating <b>5000+ concurrent rules</b> with latency of <b>50ms</b> and processing up to <b>2000 API calls per second.</b>",
-                "Developed a self-service web portal for rule management by business users, reducing rule creation time from <b>4 weeks of development effort to minutes.</b>",
-                "Developed a versatile rule engine that handles <b>any combination</b> of business conditions using the Drools framework."
+                "Architected a high-throughput Rule Engine processing <b>5,000+ concurrent business rules</b> with <b>50ms latency</b> at <b>2,000 TPS</b>.",
+                "Introduced self-service portal cutting rule creation time from <b>4 weeks to minutes</b>, incorporating versatile business logic via the <b>Drools framework</b>."
             ]
         },
         {
             "name":"Amazon VendorHoldbacks: Seasonal Holdbacks",
-            "role":"Individual",
-            "duration":"July 2021 - Oct 2021",
             "description": [
-                "Designed <b>automated holdbacks</b> with an interactive seasonality <b>configuration dashboard</b>, streamlining vendor risk management across <b>peak events</b>. (Prime Day, Black Friday, holiday sales, etc.)",
-                "Implemented a <b>linear regression</b> ML model to analyze 15+ months of historical vendor behavior, automating <b>risk assessment for 3600+ vendors.</b>"
+                "Developed ML-driven automated holdback system preventing <b>$14.7MM in debit balance exposure</b>. Built scalable pipeline processing <b>90,000+ vendors'</b> historical data.",
+                "Configurable risk engine using <b>linear regression</b> for seasonal patterns, eliminating manual assessment for <b>3,600+ high-risk vendors</b> during peak events (Prime Day, Black Friday)."
             ]
         },
         {
             "name":"Amazon Approvals: Emails",
-            "role":"Team project",
-            "duration":"Dec 2024 - Feb 2025",
             "description": [
                 "Built highly configurable email orchestration system handling approval and reminder emails for sending up to <b>200K approval emails per day</b>."
-            ]
-        },
-        {
-            "name":" IRageCapital: Stock market simulator",
-            "role":"Individual",
-            "duration":"Jun 2017 – Aug 2017",
-            "description": [
-                "Developed a high-performance market replay simulator in C++, achieving <b><50 nanosecond latency</b> per market execution, enabling <b>backtesting</b> of trading strategies against historical market data."
             ]
         }
     ],
     "achievements":[
-        "Amazon FinAuto Hackathon 2023 finalist",
-        "FinAuto SDE recognition award 2021 and 2022",
-        "TopCoder Development Challenge – 3rd prize ($1100 prize)",
-        "IBM's Call for Code Prize – AngelHack 2018 ($1000 prize)",
-        "Smart India Hackathon 2016 finalist"
+        "Amazon SDE Recognition Awards (2022, 2024 & 2025) for raising engineering bar",
+        "Amazon FinAuto Hackathon 2024 finalist - IDE tooling for AWS Step Functions",
+        "IBM's Call for Code Prize – AngelHack ($1000 prize)",
+        "TopCoder Development Challenge – 3rd prize ($1100 prize)"
+    ],
+    "leadership":[
+        "Conducted 1,100+ code reviews for quality and performance",
+        "Regularly advise leadership on feasibility and prioritization",
+        "Active participant in design reviews across multiple teams"
     ],
     "seo": [
-        " Java, Python, C++, JavaScript, SQL, Angular, Spring, Django,  MySQL, PostgreSQL, MongoDB, AWS, Azure, Google Cloud",
-        " Docker, Kubernetes, Git, Jenkins,  REST APIs, Microservices,  Software Development, Software Engineering,  Software Architecture",
-        " System Design, Database Design,  Object-Oriented Programming (OOP),  Agile, Scrum, DevOps,  CI/CD,  Testing, Debugging, Troubleshooting",
-        " Algorithms, Data Structures,  Web Development,  Mobile Development, Android Development, Cloud Computing,  SDLC,  Technical Leadership",
-        " Web Services,  Integration,  Software Design Patterns,  Version Control,  Quality Assurance,  Performance Optimization",
-        " Scalability,  Security,  Linux,  Windows,  Scripting,  Frameworks,  Libraries,  Database Management,  Technical Documentation",
-        " API Integration,  Full Stack Development,  Backend Development,  Frontend Development",
-        " Agile, Scrum, SDLC, TDD, Waterfall,  CI/CD Pipelines,  DevOps Practices,  Software Development Life Cycle",
-        " Leadership, Team Management, Mentoring, Collaboration, Communication, Problem-solving, Critical Thinking, Innovation,  Developed, Architected",
+        " Java, Python, C++, JavaScript, TypeScript, SQL, MySQL, AWS, GCP, Azure, Google Cloud, Salesforce",
+        " Docker, Kubernetes, Git, Jenkins, Spinnaker, REST APIs, Microservices, Software Development, Software Engineering, Software Architecture",
+        " System Design, Database Design, Object-Oriented Programming (OOP), Agile, Scrum, DevOps, CI/CD, Testing, Debugging, Troubleshooting",
+        " Algorithms, Data Structures, Web Development, Cloud Computing, SDLC, Technical Leadership, Distributed Systems, Agentic Systems",
+        " Web Services, Integration, Software Design Patterns, Version Control, Quality Assurance, Performance Optimization",
+        " Scalability, Security, Linux, Windows, Scripting, Frameworks, Libraries, Database Management, Technical Documentation",
+        " API Integration, Full Stack Development, Backend Development, Frontend Development, Encryption, Multi-Cloud",
+        " Agile, Scrum, SDLC, TDD, CI/CD Pipelines, DevOps Practices, Software Development Life Cycle",
+        " Leadership, Team Management, Mentoring, Collaboration, Communication, Problem-solving, Critical Thinking, Innovation, Developed, Architected",
         " Implemented, Optimized, Designed, Deployed, Led, Managed, Mentored, Integrated, Automated, Streamlined, Refactored, Debugged, Evaluated, Spearheaded, Resolved",
-        " EC2, Lambda, ECS, EKS, S3, RDS, DynamoDB, VPC, API Gateway, CloudFormation, CloudWatch,  Auto Scaling, Load Balancing, Serverless, Containers",
-        " Microservices,  DevOps,  CI/CD,  Agile,  System Design,  Scalability,  Performance Optimization,  Security,  AWS CLI,  AWS SDK"
+        " EC2, Lambda, ECS, EKS, GKE, S3, RDS, DynamoDB, Cloud SQL, VPC, API Gateway, CloudFormation, CloudWatch, Step Functions, EventBridge, SQS, SNS, Redshift",
+        " Gen-AI, LLMs, Prompt Engineering, RAG, Agent Memory, AWS Bedrock, AWS AgentCore, Tensorflow, LangChain, NumPy, Pandas",
+        " Microservices, DevOps, CI/CD, Agile, System Design, Scalability, Performance Optimization, Security, AWS CLI, AWS SDK, Event-Driven, Domain-Driven"
+    ],
+    "pdfVariants": [
+        { "slug": "latest", "label": "Latest", "file": "ccd97-resume-latest.pdf" },
+        { "slug": "backend", "label": "Backend-focused", "file": "ccd97-resume-backend.pdf" },
+        { "slug": "ai", "label": "AI-focused", "file": "ccd97-resume-ai.pdf" },
+        { "slug": "infra", "label": "Infra-focused", "file": "ccd97-resume-infra.pdf" }
     ]
 }

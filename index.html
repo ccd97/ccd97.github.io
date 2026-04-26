@@ -2,20 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Cyprien Dcunha</title>
+    <title>Cyprien Dcunha — Software Engineer</title>
     <meta
       name="viewport"
       content="width=device-width,height=device-height,initial-scale=1.0"
     />
     <meta name="google" value="notranslate" content="notranslate" />
-    <meta property="og:title" content="Cyprien Dcunha – portfolio" />
+    <meta property="og:title" content="Cyprien Dcunha — Software Engineer" />
     <meta property="og:image" content="media/ccd97.png" />
     <meta
       property="og:description"
-      content="Software developer • Sport programmer • AI enthusiast"
+      content="Software Engineer at Amazon Finance Automation. Distributed systems, payments platforms, rule engines at scale."
     />
     <meta property="og:url" content="https://ccd97.github.io" />
     <link rel="icon" type="image/png" href="media/tabicon.ico" />
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          var theme = stored === "light" || stored === "dark" ? stored : prefersDark ? "dark" : "light";
+          if (theme === "dark") document.documentElement.classList.add("dark");
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

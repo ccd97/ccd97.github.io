@@ -19,9 +19,13 @@ export interface Education {
 
 export interface ResumeProject {
   name: string;
-  role: string;
-  duration: string;
   description: string[];
+}
+
+export interface PdfVariant {
+  slug: string;
+  label: string;
+  file: string;
 }
 
 export interface ResumeData {
@@ -31,5 +35,7 @@ export interface ResumeData {
   education: Education[];
   projects: ResumeProject[];
   achievements: string[];
+  leadership: string[];
   seo: string[];
+  pdfVariants: PdfVariant[];
 }

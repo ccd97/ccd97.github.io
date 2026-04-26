@@ -1,260 +1,539 @@
 {
-    "projects":[
-        {
-            "name":"CP Testing Framework",
-            "repo":"CP-test",
-            "type":"github",
-            "description":"A tool to generate test-cases for competitive programming. With it, you can also execute your code on generated test-cases and compare it with other code automatically.",
-            "language":"Python",
-            "tools":[
-                "python"
-            ]
-        },
-        {
-            "name":"Neural Networks Intro",
-            "repo":"hello_nn",
-            "type":"github",
-            "description":"Some simple neural networks written in numpy and tensorflow. It also contains ipython-notebook for other folks to understand neural networks.",
-            "language":"Python",
-            "tools":[
-                "python-tensorflow",
-                "python-numpy"
-            ]
-        },
-        {
-            "name":"Image Classification Server",
-            "repo":"Image-Classify-Server",
-            "type":"github",
-            "description":"Image classification using neural networks (Google's Inception v3). It's written in django and provides Web UI as well as API.",
-            "language":"Django",
-            "tools":[
-                "python-tensorflow",
-                "python-django",
-                "javascript-jquery"
-            ]
-        },
-        {
-            "repo":"VC-chain",
-            "type":"github",
-            "description":"A version control system using block-chain having features similar to git. The project also contains an interactive Web UI to use the service.",
-            "language":"Django",
-            "tools":[
-                "blockchain",
-                "python-django",
-                "javascript"
-            ]
-        },
-        {
-            "repo":"Blk-Chain",
-            "type":"github",
-            "description":"Blk-Chain is a simple, minimal version of block-chain to understand the data-structure and working of block-chain. It contains block-chain data-structure as well as network handler.",
-            "language":"C++",
-            "tools":[
-                "blockchain",
-                "C++17"
-            ]
-        },
-        {
-            "repo":"SmartLanes",
-            "type":"github",
-            "description":"SmartLanes is a Bluetooth beacon based solution for efficiently doing transactions and analysis of vehicle traffic.",
-            "language":"Android",
-            "tools":[
-                "java-android",
-                "python-django",
-                "javascript-nodejs"
-            ]
-        },
-        {
-            "name":"Teacher Feedback App",
-            "repo":"api-feedback-android",
-            "type":"github",
-            "description":"An android app to take feedback from students about teachers. Built at D.J.S.C.O.E.'s ACM chapter's hackathon.",
-            "language":"Android",
-            "tools":[
-                "java-android"
-            ]
-        },
-        {
-            "name":"Citizen Service App",
-            "repo":"CitizenService",
-            "type":"github",
-            "description":"A multi-lingual Android app, that would auto-recognize images of garbage, potholes, and traffic posted by citizens to resolve them using neural network (embedded tensorflow).",
-            "language":"Android",
-            "tools":[
-                "tensorflow",
-                "java-android"
-            ]
-        },
-        {
-            "name":"Keystroke Authentication",
-            "updated_at":"2 Apr 2017",
-            "description":"User Authentication based on Keystroke Dynamics using Adversarial Neural Network. Built during Smart India Hackathon 2017",
-            "language":"Python",
-            "tools":[
-                "python-tensorflow",
-                "python-django"
-            ],
-            "link":"https://github.com/noddyaf-sih-2017/"
-        },
-        {
-            "name":" NN SJF Scheduling",
-            "repo":"burst-time-NN",
-            "type":"gitlab",
-            "updated_at":"22 Oct 2017",
-            "description":"Determining bust time using neural networks to do shortest job first scheduling for processes. Built as operating system mini-project",
-            "language":"Python",
-            "tools":[
-                "python-keras"
-            ]
-        },
-        {
-            "name":"My Portfolio",
-            "repo":"ccd97.github.io",
-            "type":"github",
-            "description":"The Website which you are currently going through. A minimal, simple, clean user interface.",
-            "language":"Javascript",
-            "tools":[
-                "javascript-jquery",
-                "semantic-ui"
-            ]
-        }
+  "hero": {
+    "name": "Cyprien Dcunha",
+    "tagline": "Senior backend engineer designing resilient, multi-cloud distributed systems — from uplifting Tier 1 core services onto GCP to LLM-driven financial platforms.",
+    "currently": "Uplifting core and platform services from AWS to GCP at Salesforce.",
+    "location": "Hyderabad, India"
+  },
+  "work": {
+    "defaultKicker": "Selected work",
+    "roles": [
+      {
+        "id": "sfdc-sde",
+        "company": "Salesforce",
+        "org": "Core Infra",
+        "role": "Senior Software Development Engineer",
+        "start": "Nov 2025",
+        "end": null,
+        "location": "Hyderabad"
+      },
+      {
+        "id": "amzn-sde2",
+        "company": "Amazon",
+        "org": "Finance Automation",
+        "role": "Software Development Engineer II",
+        "start": "Dec 2021",
+        "end": "Nov 2025",
+        "location": "Hyderabad"
+      },
+      {
+        "id": "amzn-sde1",
+        "company": "Amazon",
+        "org": "Finance Automation",
+        "role": "Software Development Engineer I",
+        "start": "May 2019",
+        "end": "Dec 2021",
+        "location": "Hyderabad"
+      },
+      {
+        "id": "irage-intern",
+        "company": "IRageCapital Advisory",
+        "org": null,
+        "role": "C++ Development Intern",
+        "start": "Jun 2017",
+        "end": "Aug 2017",
+        "location": "Mumbai"
+      }
     ],
-    "skills":[
-        {
-            "title":"Programming Languages",
-            "content":[
-                {
-                    "heading":"Languages",
-                    "description":"Following are the paradigms I am good with:",
-                    "skill_list":[
-                        {
-                            "name":"Imperative",
-                            "popup":"C, C++, Java, Python, etc.",
-                            "weak":false
-                        },
-                        {
-                            "name":"Object Oriented",
-                            "popup":"C++, Java, Python, etc.",
-                            "weak":false
-                        },
-                        {
-                            "name":"Scripting",
-                            "popup":"Python, Shell, etc.",
-                            "weak":false
-                        },
-                        {
-                            "name":"Concurrent",
-                            "popup":"C++, Java, etc.",
-                            "weak":false
-                        },
-                        {
-                            "name":"Functional",
-                            "popup":"Javascript, Python, C++, etc.",
-                            "weak":false
-                        },
-                        {
-                            "name":"Database",
-                            "popup":"MySQL, etc.",
-                            "weak":false
-                        },
-                        {
-                            "name":"Parallel",
-                            "popup":"A bit of OpenCL",
-                            "weak":true
-                        },
-                        {
-                            "name":"Assembly",
-                            "popup":"A bit of x86 and amd64",
-                            "weak":true
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "title":"Tools/Frameworks",
-            "content":[
-                {
-                    "heading":"Tools",
-                    "description":"Some of the important tools I use frequently are:",
-                    "skill_list":[
-                        {
-                            "name":"Tensorflow",
-                            "popup":"for neural networks",
-                            "weak":false
-                        },
-                        {
-                            "name":"Git",
-                            "weak":false
-                        }
-                    ]
-                },
-                {
-                    "heading":"Frameworks",
-                    "description":"Mostly used frameworks by me are:",
-                    "skill_list":[
-                        {
-                            "name":"Android SDK",
-                            "weak":false
-                        },
-                        {
-                            "name":"Django",
-                            "weak":false
-                        },
-                        {
-                            "name":"Ethereum Dapp",
-                            "popup":"Web3j, Solidity, Truffle, etc.",
-                            "weak":true
-                        },
-                        {
-                            "name":"NodeJS",
-                            "weak":true
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "title":"Technologies/Other",
-            "content":[
-                {
-                    "heading":"Technologies",
-                    "description":"Below are the technologies I am very much interested in:",
-                    "skill_list":[
-                        {
-                            "name":"Machine learning",
-                            "weak":false
-                        },
-                        {
-                            "name":"Deep learning",
-                            "weak":false
-                        },
-                        {
-                            "name":"Block-chain",
-                            "weak":false
-                        }
-                    ]
-                },
-                {
-                    "heading":"Other Interests",
-                    "description":"Other programming Interests:",
-                    "skill_list":[
-                        {
-                            "name":"Sport Programming",
-                            "weak":false
-                        },
-                        {
-                            "name":"Ethical hacking and Security",
-                            "weak":false
-                        },
-                        {
-                            "name":"Kernel hacking",
-                            "weak":false
-                        }
-                    ]
-                }
-            ]
-        }
+    "caseStudies": [
+      {
+        "id": "sfdc-gcp-uplift",
+        "title": "Core & Platform Services GCP Uplift",
+        "org": "Salesforce Core Infra",
+        "role": "Lead",
+        "duration": "Nov 2025 – Present",
+        "summary": "Porting AWS-native core services onto GCP. First AWS-to-GCP uplifts in the platform org; four shipped so far.",
+        "metrics": [
+          {
+            "label": "Services uplifted",
+            "value": "4"
+          }
+        ],
+        "tech": [
+          "Java",
+          "AWS",
+          "GCP",
+          "GKE",
+          "Kubernetes"
+        ],
+        "problem": "Core and platform services ran only on AWS. Each uplift meant standing up GCP infra, getting it production-ready, and moving live customers across.",
+        "approach": [
+          "Set up GCP infra for each service in preprod and prod.",
+          "Ran production readiness sign-offs and operational tooling before taking traffic.",
+          "Coordinated upstream and downstream changes with dependency teams.",
+          "Migrated customers from AWS to GCP."
+        ],
+        "outcome": [
+          "Shipped Key Broker, DocGen, PDFGen, etc. services on GCP.",
+          "First AWS-to-GCP uplifts in the platform team and wider org."
+        ],
+        "roleIds": [
+          "sfdc-sde"
+        ]
+      },
+      {
+        "id": "vh-rearch",
+        "title": "VendorHoldbacks Re-Architecture",
+        "org": "Amazon Finance Automation",
+        "role": "Co-lead",
+        "duration": "Apr 2021 – Feb 2024",
+        "summary": "Decomposed a batch monolith into an event-driven microservice platform handling $2.1B in vendor payments at 2000 TPS.",
+        "metrics": [
+          {
+            "label": "Transactions / day",
+            "value": "6M"
+          },
+          {
+            "label": "Throughput",
+            "value": "2,000 TPS"
+          },
+          {
+            "label": "Microservices",
+            "value": "11"
+          },
+          {
+            "label": "Vendor inquiries",
+            "value": "−23.5%"
+          }
+        ],
+        "tech": [
+          "Java",
+          "AWS Lambda",
+          "ECS",
+          "SQS",
+          "SNS",
+          "DynamoDB",
+          "CloudFormation"
+        ],
+        "problem": "The VendorHoldbacks platform was a SQL-heavy batch monolith. Reconciliation ran overnight, scaling was pinned to a single database, and vendors were filing inquiries against payment decisions they couldn't see reasoning for.",
+        "approach": [
+          "Split the monolith into 11 microservices. Led a team of 3 through design and rollout.",
+          "Replaced batch SQL with Lambda, SQS, SNS, and DynamoDB, managed via CloudFormation.",
+          "Co-led architecture reviews and cutover plans across upstream sources."
+        ],
+        "outcome": [
+          "6M transactions/day, $2.1B, 2000 TPS on the new platform.",
+          "Payment processing moved from overnight batches to near real-time.",
+          "Vendor inquiries dropped 23.5% across 14+ countries once decisions were visible same-day instead of next-day."
+        ],
+        "roleIds": [
+          "amzn-sde1",
+          "amzn-sde2"
+        ]
+      },
+      {
+        "id": "llm-recon",
+        "title": "LLM-driven Financial Reconciliation Engine",
+        "org": "Amazon Finance Automation",
+        "role": "Individual contributor",
+        "duration": "2024 – 2025",
+        "summary": "LLM reconciliation engine processing up to 10M records per day at 67% of human accuracy.",
+        "metrics": [
+          {
+            "label": "Records / day",
+            "value": "10M"
+          },
+          {
+            "label": "Manual work reduced",
+            "value": "65%"
+          },
+          {
+            "label": "Recon accuracy",
+            "value": "67%"
+          }
+        ],
+        "tech": [
+          "Python",
+          "LLMs",
+          "RAG",
+          "AWS Bedrock",
+          "LangChain"
+        ],
+        "problem": "Reconciliation was done manually by analysts matching records against historical customer notes. Didn't scale to 10M records/day.",
+        "approach": [
+          "RAG pipeline over historical analyst notes, giving the LLM prior human decisions as context.",
+          "LLM-based semantic mapping for free-text fields that rule-based matchers couldn't handle.",
+          "Integrated into the reconciliation workflow with human review on low-confidence outputs."
+        ],
+        "outcome": [
+          "10M records/day at 67% of human accuracy.",
+          "Manual analyst work down 65%."
+        ],
+        "roleIds": [
+          "amzn-sde2"
+        ]
+      },
+      {
+        "id": "vh-rules",
+        "title": "VendorHoldbacks Rule Engine",
+        "org": "Amazon Finance Automation",
+        "role": "Lead",
+        "duration": "May 2023 – Aug 2023",
+        "summary": "Self-service rule platform running 5000+ rules at 50ms and 2000 TPS.",
+        "metrics": [
+          {
+            "label": "Concurrent rules",
+            "value": "5,000+"
+          },
+          {
+            "label": "Latency",
+            "value": "50ms"
+          },
+          {
+            "label": "Throughput",
+            "value": "2,000 TPS"
+          }
+        ],
+        "tech": [
+          "Java",
+          "Drools",
+          "Spring",
+          "DynamoDB",
+          "React"
+        ],
+        "problem": "Holdback rules were hard-coded across services. Every new rule took ~4 weeks of engineering.",
+        "approach": [
+          "Drools-backed rule engine.",
+          "Web portal for business owners to author, test, and publish rules.",
+          "Tuned indexing and caching to hold 50ms at 2000 TPS."
+        ],
+        "outcome": [
+          "Rule authoring dropped from ~4 weeks of engineering to minutes.",
+          "All 5000+ production rules are now authored by the VHB business team."
+        ],
+        "roleIds": [
+          "amzn-sde2"
+        ]
+      },
+      {
+        "id": "vh-seasonal",
+        "title": "Seasonal Holdbacks",
+        "org": "Amazon Finance Automation",
+        "role": "Individual contributor",
+        "duration": "Jul 2021 – Oct 2021",
+        "summary": "Linear-regression risk model for holdback decisions on 3,600+ high-risk vendors across peak-season events. Prevented $14.7MM in debit balance exposure.",
+        "metrics": [
+          {
+            "label": "Debit exposure prevented",
+            "value": "$14.7MM"
+          },
+          {
+            "label": "Vendors automated",
+            "value": "3,600+"
+          }
+        ],
+        "tech": [
+          "Python",
+          "AWS",
+          "Linear regression"
+        ],
+        "problem": "Peak events (Prime Day, Black Friday, holiday) needed per-vendor holdback adjustments. Analysts couldn't scale, so the default was conservative holdbacks that strained vendors.",
+        "approach": [
+          "Pipeline over 90,000+ vendors' historical data to train a linear-regression risk model.",
+          "Picked linear regression for explainability to finance and vendor-facing teams. Stronger ML was on the roadmap."
+        ],
+        "outcome": [
+          "Automated risk decisions for 3,600+ high-risk vendors through peak events.",
+          "Prevented $14.7MM in debit balance exposure."
+        ],
+        "roleIds": [
+          "amzn-sde1"
+        ]
+      },
+      {
+        "id": "merchant-data-segregation",
+        "title": "Special Merchant Data Segregation",
+        "org": "Amazon Finance Automation",
+        "role": "Individual contributor",
+        "duration": "2020 – 2021",
+        "summary": "Separated views, APIs, and reports between general vendors and special merchants across 20+ input sources. Config-driven onboarding.",
+        "metrics": [
+          {
+            "label": "Input sources secured",
+            "value": "20+"
+          },
+          {
+            "label": "Merchant onboarding",
+            "value": "One-touch"
+          }
+        ],
+        "tech": [
+          "Java",
+          "AWS"
+        ],
+        "problem": "Stored data was already segregated between general vendors and special merchants, but downstream views, APIs, and legacy CSV/Excel reports weren't. Adding a new special merchant meant code changes across every layer.",
+        "approach": [
+          "Split views by permission group.",
+          "Auth and validation at the API layer to scope responses to caller permissions.",
+          "Stripped restricted rows from legacy CSV and Excel reports at runtime.",
+          "Made new-merchant onboarding config-driven across the 20+ upstream sources."
+        ],
+        "outcome": [
+          "Segregation held across views, APIs, and reports — not just storage.",
+          "New-merchant onboarding went from multi-team code changes to a config entry."
+        ],
+        "roleIds": [
+          "amzn-sde1"
+        ]
+      },
+      {
+        "id": "approvals-emails",
+        "title": "Approvals — Emails",
+        "org": "Amazon Finance Automation",
+        "role": "Team project",
+        "duration": "Dec 2024 – Feb 2025",
+        "summary": "Policy-based email orchestrator for approval and reminder workflows. 200K+ emails/day.",
+        "metrics": [
+          {
+            "label": "Emails / day",
+            "value": "200K+"
+          }
+        ],
+        "tech": [
+          "Java",
+          "AWS SES",
+          "Lambda",
+          "SQS"
+        ],
+        "problem": "Approval workflows had no dedicated email layer. Policy-based routing, configurable cadence, and template control didn't exist anywhere in the stack.",
+        "approach": [
+          "Greenfield policy-based orchestrator for approval and reminder emails.",
+          "Templates, routing, and cadence driven by policy."
+        ],
+        "outcome": [
+          "200K+ approval and reminder emails/day.",
+          "Policy-based email control now exists as a first-class capability."
+        ],
+        "roleIds": [
+          "amzn-sde2"
+        ]
+      },
+      {
+        "id": "irage-sim",
+        "title": "Stock Market Simulator",
+        "org": "IRageCapital Advisory",
+        "role": "Intern",
+        "duration": "Jun 2017 – Aug 2017",
+        "summary": "C++ HFT market replay simulator at <50ns per-execution latency.",
+        "metrics": [
+          {
+            "label": "Per-execution latency",
+            "value": "<50ns"
+          }
+        ],
+        "tech": [
+          "C++17",
+          "Low-latency systems"
+        ],
+        "problem": "The firm needed to backtest trading strategies against historical market data without running a full exchange simulator.",
+        "approach": [
+          "C++17 replay engine with lock-free data structures on the hot path.",
+          "Profiled and tuned to hold per-execution latency under 50ns."
+        ],
+        "outcome": [
+          "Backtesting tool for strategy evaluation at realistic execution-time latencies."
+        ],
+        "roleIds": [
+          "irage-intern"
+        ]
+      }
     ]
+  },
+  "sideProjects": {
+    "kicker": "Side projects",
+    "intro": "Experiments and weekend builds — from recent LLM fine-tuning pipelines back through college-era systems work.",
+    "items": [
+      {
+        "name": "VoiceTune",
+        "repo": "voicetune",
+        "type": "github",
+        "description": "Pipeline for turning personal audio call recordings into LoRA fine-tuning datasets for local LLMs — end-to-end from audio preprocessing to Gemma fine-tunes on GCP.",
+        "tools": [
+          "Python",
+          "LoRA",
+          "Gemma",
+          "GCP",
+          "LLMs"
+        ]
+      },
+      {
+        "name": "CP Testing Framework",
+        "repo": "CP-test",
+        "type": "github",
+        "description": "Python tool that generates and diff-runs test cases for competitive programming submissions across multiple candidate solutions.",
+        "tools": [
+          "Python"
+        ]
+      },
+      {
+        "name": "Image Classify Server",
+        "repo": "image-classify-server",
+        "type": "github",
+        "description": "Django-backed image classification server running TensorFlow Inception v3, with a jQuery frontend for uploads and predictions.",
+        "tools": [
+          "Python",
+          "Django",
+          "TensorFlow",
+          "jQuery"
+        ]
+      },
+      {
+        "name": "Portfolio & Résumé",
+        "repo": "ccd97.github.io",
+        "type": "github",
+        "description": "This site — a React + TypeScript portfolio and résumé, deployed on GitHub Pages.",
+        "tools": [
+          "TypeScript",
+          "React",
+          "Vite",
+          "Tailwind"
+        ]
+      },
+      {
+        "name": "CP Solutions",
+        "repo": "cp_solutions",
+        "type": "github",
+        "description": "Archive of my competitive programming solutions across Codeforces, CodeChef, and HackerRank — mostly C++.",
+        "tools": [
+          "C++"
+        ]
+      },
+      {
+        "name": "VC-Chain",
+        "repo": "VC-chain",
+        "type": "github",
+        "description": "Blockchain-backed version control mini-project — a Django web app exploring tamper-evident commit history on a custom chain.",
+        "tools": [
+          "Python",
+          "Django",
+          "Blockchain"
+        ]
+      },
+      {
+        "name": "Hello NN",
+        "repo": "hello_nn",
+        "type": "github",
+        "description": "Jupyter notebook demos of classic neural nets built from scratch — feedforward, CNN, RNN, autoencoders, Hopfield, and Restricted Boltzmann Machines.",
+        "tools": [
+          "Jupyter",
+          "TensorFlow",
+          "NumPy"
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "groups": [
+      {
+        "title": "Languages",
+        "items": [
+          "Python",
+          "Java",
+          "C++",
+          "TypeScript",
+          "JavaScript",
+          "SQL"
+        ]
+      },
+      {
+        "title": "Backend & Architecture",
+        "items": [
+          "Distributed Systems",
+          "Agentic Systems",
+          "Microservices",
+          "Event-driven architecture",
+          "Domain-driven design",
+          "REST APIs",
+          "Spring",
+          "Guice / Dagger"
+        ]
+      },
+      {
+        "title": "AWS",
+        "items": [
+          "Lambda",
+          "ECS",
+          "Step Functions",
+          "EventBridge",
+          "SQS / SNS",
+          "DynamoDB",
+          "RDS",
+          "S3",
+          "Redshift"
+        ]
+      },
+      {
+        "title": "GCP & Cloud-Native",
+        "items": [
+          "Cloud SQL",
+          "GKE",
+          "Docker",
+          "Kubernetes",
+          "Jenkins",
+          "Spinnaker"
+        ]
+      },
+      {
+        "title": "Gen-AI & ML",
+        "items": [
+          "LLMs",
+          "Prompt Engineering",
+          "RAG",
+          "Agent Memory",
+          "AWS Bedrock",
+          "AWS AgentCore",
+          "LangChain",
+          "TensorFlow",
+          "NumPy",
+          "Pandas"
+        ]
+      },
+      {
+        "title": "Tooling & Practice",
+        "items": [
+          "JUnit",
+          "Gradle",
+          "CI/CD",
+          "Load & canary testing",
+          "Git",
+          "Agile / Scrum"
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "email": "dcunha.cyprien@gmail.com",
+    "links": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com/ccd97",
+        "icon": "github"
+      },
+      {
+        "label": "GitLab",
+        "href": "https://gitlab.com/ccd97",
+        "icon": "gitlab"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/cyprien-dcunha",
+        "icon": "linkedin"
+      },
+      {
+        "label": "Résumé",
+        "href": "./resume.html",
+        "icon": "idcard"
+      }
+    ]
+  }
 }
