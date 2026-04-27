@@ -205,7 +205,7 @@ export function PortfolioPage() {
 
       <section id="seg_skills" className="py-24 md:py-32 px-4 sm:px-6 border-t border-border">
         <div className="container mx-auto max-w-6xl">
-          <SectionHeader index="04" title="Skills" kicker="Stack" />
+          <SectionHeader index="04" title="Skills" kicker="Skills" />
           <SkillsSection groups={data.skills.groups} />
         </div>
       </section>

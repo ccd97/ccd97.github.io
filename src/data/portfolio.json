@@ -1,8 +1,8 @@
 {
   "hero": {
     "name": "Cyprien Dcunha",
-    "tagline": "Senior backend engineer designing resilient, multi-cloud distributed systems — from uplifting Tier 1 core services onto GCP to LLM-driven financial platforms.",
-    "currently": "Uplifting core and platform services from AWS to GCP at Salesforce.",
+    "tagline": "Senior SDE @ Salesforce ｜ Ex-Amazon ｜ Expert in Distributed & Event-driven Systems, Agentic Automation, & Cloud Infrastructure.",
+    "currently": "Engineering multi-substrate infrastructure at Salesforce",
     "location": "Hyderabad, India"
   },
   "work": {
@@ -12,7 +12,7 @@
         "id": "sfdc-sde",
         "company": "Salesforce",
         "org": "Core Infra",
-        "role": "Senior Software Development Engineer",
+        "role": "Senior Software Engineer",
         "start": "Nov 2025",
         "end": null,
         "location": "Hyderabad"

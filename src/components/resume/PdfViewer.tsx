@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Loader2 } from "lucide-react";
 
 interface Props {
   src: string;
@@ -7,6 +8,7 @@ interface Props {
 export function PdfViewer({ src }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let cancelled = false;
@@ -15,6 +17,7 @@ export function PdfViewer({ src }: Props) {
 
     container.innerHTML = "";
     setError(null);
+    setLoading(true);
 
     const render = async () => {
       try {
@@ -60,6 +63,8 @@ export function PdfViewer({ src }: Props) {
         }
       } catch (e) {
         if (!cancelled) setError(e instanceof Error ? e.message : String(e));
+      } finally {
+        if (!cancelled) setLoading(false);
       }
     };
 
@@ -75,6 +80,16 @@ export function PdfViewer({ src }: Props) {
         <p className="text-sm text-destructive mb-3">
           Failed to load PDF: {error}
         </p>
+      )}
+      {loading && !error && (
+        <div
+          className="flex flex-col items-center justify-center gap-3 py-16 text-muted-foreground"
+          role="status"
+          aria-live="polite"
+        >
+          <Loader2 className="h-8 w-8 animate-spin" aria-hidden="true" />
+          <p className="text-sm">Loading resume…</p>
+        </div>
       )}
       <div ref={containerRef} className="w-full" />
     </div>

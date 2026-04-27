@@ -19,7 +19,7 @@ export function CaseStudyDialog({ caseStudy, open, onOpenChange }: Props) {
   if (!caseStudy) return null;
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto gap-0 p-0">
+      <DialogContent className="max-w-3xl max-h-[90dvh] overflow-y-auto gap-0 p-0">
         <DialogHeader className="px-6 pt-8 pb-6 pr-14 md:px-10 md:pt-10 md:pb-7 md:pr-16 border-b border-border/60 space-y-0 gap-0">
           <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
             <span className="text-brand">{caseStudy.org}</span>

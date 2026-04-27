@@ -15,7 +15,7 @@ export function Hero({ hero, email }: Props) {
   return (
     <section
       id="seg_home"
-      className="relative isolate min-h-[80vh] flex items-end md:items-center px-4 sm:px-6 md:px-16 lg:px-24 xl:px-32 overflow-hidden"
+      className="relative isolate min-h-[80dvh] flex items-end md:items-center px-4 sm:px-6 md:px-16 lg:px-24 xl:px-32 overflow-hidden"
     >
       <SignatureCanvas />
 

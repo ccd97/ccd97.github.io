@@ -61,20 +61,8 @@
   * {
     @apply border-border;
   }
-  html {
-    scroll-snap-type: y proximity;
-  }
   body {
     @apply bg-background text-foreground antialiased;
-  }
-  section {
-    scroll-snap-align: start;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-snap-type: none;
   }
 }
 

@@ -2,34 +2,114 @@ import { useEffect, useRef, useState } from "react";
 
 const DRAW_DURATION_MS = 1800;
 const DRAW_STAGGER_MS = 900;
-const PARALLAX_TRANSLATE_PX = 30;
-const PARALLAX_SCALE_AMOUNT = 0.04;
-const TWINKLE_PERIOD_MS = 2000;
-const TWINKLE_PERIOD_JITTER_MS = 1000;
-const TWINKLE_DIP_OPACITY = 0.05;
 
 const OVERLAY_OPACITY = {
   light: { predraw: 0.2, postdraw: 0.1 },
   dark: { predraw: 0.1, postdraw: 0.05 },
 };
 
-const SQUARE_ASPECT_MIN = 0.9;
-const SQUARE_ASPECT_MAX = 1.1;
-const SQUARE_MAX_BBOX_FRAC = 0.01;
+const MEASURE_CHUNK = 200;
+const ANIM_CHUNK = 300;
 
-function isLowEndDevice(): boolean {
-  const nav = navigator as Navigator & { deviceMemory?: number };
-  if (typeof nav.deviceMemory === "number" && nav.deviceMemory <= 4) return true;
-  if (typeof nav.hardwareConcurrency === "number" && nav.hardwareConcurrency <= 4) return true;
-  return false;
+type IdleWindow = Window & {
+  requestIdleCallback?: (
+    cb: (deadline: { timeRemaining: () => number }) => void,
+    opts?: { timeout?: number },
+  ) => number;
+  cancelIdleCallback?: (handle: number) => void;
+};
+
+function scheduleIdle(cb: () => void, timeout = 2000): () => void {
+  const w = window as IdleWindow;
+  if (typeof w.requestIdleCallback === "function") {
+    const handle = w.requestIdleCallback(() => cb(), { timeout });
+    return () => w.cancelIdleCallback?.(handle);
+  }
+  const handle = window.setTimeout(cb, 200);
+  return () => clearTimeout(handle);
+}
+
+function yieldToMain(): Promise<void> {
+  return new Promise((resolve) => {
+    const w = window as IdleWindow;
+    if (typeof w.requestIdleCallback === "function") {
+      w.requestIdleCallback(() => resolve(), { timeout: 100 });
+    } else {
+      setTimeout(resolve, 0);
+    }
+  });
+}
+
+type SignatureGeometry = {
+  viewBox: string;
+  pathDs: string[];
+  strokeWidths: string[];
+  lengths: Float32Array;
+};
+
+let geometryPromise: Promise<SignatureGeometry> | null = null;
+
+function loadSignatureGeometry(): Promise<SignatureGeometry> {
+  if (geometryPromise) return geometryPromise;
+  geometryPromise = (async () => {
+    const res = await fetch("/signature.svg");
+    const text = await res.text();
+
+    await yieldToMain();
+
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(text, "image/svg+xml");
+    const sourceSvg = doc.querySelector("svg");
+    if (!sourceSvg) throw new Error("signature.svg missing <svg>");
+
+    const viewBox = sourceSvg.getAttribute("viewBox") ?? "0 0 2048 2048";
+    const sourceGroup = sourceSvg.querySelector("g");
+    const paths = Array.from(
+      (sourceGroup ?? sourceSvg).querySelectorAll("path"),
+    );
+    const pathDs = paths.map((p) => p.getAttribute("d") ?? "");
+    const groupStrokeWidth =
+      sourceGroup?.getAttribute("stroke-width") ??
+      sourceSvg.getAttribute("stroke-width");
+    const strokeWidths = paths.map(
+      (p) => p.getAttribute("stroke-width") ?? groupStrokeWidth ?? "1",
+    );
+
+    const svgNS = "http://www.w3.org/2000/svg";
+    const measureSvg = document.createElementNS(svgNS, "svg");
+    measureSvg.setAttribute("viewBox", viewBox);
+    measureSvg.style.position = "absolute";
+    measureSvg.style.width = "0";
+    measureSvg.style.height = "0";
+    measureSvg.style.visibility = "hidden";
+    measureSvg.setAttribute("aria-hidden", "true");
+    const measureGroup = document.createElementNS(svgNS, "g");
+    const measurePaths: SVGPathElement[] = new Array(pathDs.length);
+    for (let i = 0; i < pathDs.length; i++) {
+      const p = document.createElementNS(svgNS, "path");
+      p.setAttribute("d", pathDs[i]);
+      measureGroup.appendChild(p);
+      measurePaths[i] = p;
+    }
+    measureSvg.appendChild(measureGroup);
+    document.body.appendChild(measureSvg);
+
+    const lengths = new Float32Array(measurePaths.length);
+    for (let i = 0; i < measurePaths.length; i++) {
+      lengths[i] = measurePaths[i].getTotalLength();
+      if ((i + 1) % MEASURE_CHUNK === 0) await yieldToMain();
+    }
+
+    document.body.removeChild(measureSvg);
+
+    return { viewBox, pathDs, strokeWidths, lengths };
+  })();
+  return geometryPromise;
 }
 
 export function SignatureCanvas() {
   const hostRef = useRef<HTMLDivElement>(null);
-  const innerGroupRef = useRef<SVGGElement | null>(null);
   const drawAnimationsRef = useRef<Animation[]>([]);
-  const burstAnimationsRef = useRef<Animation[]>([]);
-  const rafRef = useRef<number | null>(null);
   const [drawComplete, setDrawComplete] = useState(false);
   const [isDark, setIsDark] = useState(() =>
     typeof document !== "undefined" &&
@@ -68,149 +148,100 @@ export function SignatureCanvas() {
 
     let cancelled = false;
 
-    fetch("/signature.svg")
-      .then((r) => r.text())
-      .then((text) => {
-        if (cancelled || !hostRef.current) return;
+    const run = async () => {
+      let geometry: SignatureGeometry;
+      try {
+        geometry = await loadSignatureGeometry();
+      } catch {
+        return;
+      }
+      if (cancelled || !hostRef.current) return;
 
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(text, "image/svg+xml");
-        const sourceSvg = doc.querySelector("svg");
-        if (!sourceSvg) return;
+      await yieldToMain();
+      if (cancelled || !hostRef.current) return;
 
-        const viewBox = sourceSvg.getAttribute("viewBox") ?? "0 0 2048 2048";
+      const { viewBox, pathDs, strokeWidths, lengths } = geometry;
+      const svgNS = "http://www.w3.org/2000/svg";
+      const svg = document.createElementNS(svgNS, "svg");
+      svg.setAttribute("viewBox", viewBox);
+      svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
+      svg.setAttribute("width", "100%");
+      svg.setAttribute("height", "100%");
+      svg.style.overflow = "visible";
 
-        const svgNS = "http://www.w3.org/2000/svg";
-        const svg = document.createElementNS(svgNS, "svg");
-        svg.setAttribute("viewBox", viewBox);
-        svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
-        svg.setAttribute("width", "100%");
-        svg.setAttribute("height", "100%");
-        svg.style.overflow = "visible";
+      const group = document.createElementNS(svgNS, "g");
+      group.setAttribute("fill", "none");
+      group.setAttribute("stroke", "currentColor");
+      group.setAttribute("stroke-linecap", "round");
+      group.setAttribute("stroke-linejoin", "round");
 
-        const parallaxGroup = document.createElementNS(svgNS, "g");
-        parallaxGroup.setAttribute("fill", "none");
-        parallaxGroup.setAttribute("stroke", "currentColor");
-        parallaxGroup.setAttribute("stroke-linecap", "round");
-        parallaxGroup.setAttribute("stroke-linejoin", "round");
-        innerGroupRef.current = parallaxGroup;
+      const frag = document.createDocumentFragment();
+      const clones: SVGPathElement[] = new Array(pathDs.length);
+      for (let i = 0; i < pathDs.length; i++) {
+        const p = document.createElementNS(svgNS, "path");
+        p.setAttribute("d", pathDs[i]);
+        p.setAttribute("stroke-width", strokeWidths[i]);
+        const len = lengths[i];
+        p.style.strokeDasharray = `${len}`;
+        p.style.strokeDashoffset = prefersReducedMotion ? "0" : `${len}`;
+        clones[i] = p;
+        frag.appendChild(p);
+      }
+      group.appendChild(frag);
+      svg.appendChild(group);
+      host.appendChild(svg);
 
-        const sourceGroup = sourceSvg.querySelector("g");
-        const paths = Array.from(
-          (sourceGroup ?? sourceSvg).querySelectorAll("path"),
+      if (prefersReducedMotion) {
+        setDrawComplete(true);
+        return;
+      }
+
+      const n = clones.length;
+      const perPathDuration = Math.max(
+        60,
+        DRAW_DURATION_MS - DRAW_STAGGER_MS,
+      );
+      const drawAnims: Animation[] = new Array(n);
+      for (let i = 0; i < n; i++) {
+        const len = lengths[i];
+        const delay = (i / n) * DRAW_STAGGER_MS;
+        drawAnims[i] = clones[i].animate(
+          [{ strokeDashoffset: len }, { strokeDashoffset: 0 }],
+          {
+            duration: perPathDuration,
+            delay,
+            easing: "ease-out",
+            fill: "forwards",
+          },
         );
-
-        const frag = document.createDocumentFragment();
-        const clones: SVGPathElement[] = [];
-        for (const p of paths) {
-          const clone = p.cloneNode(true) as SVGPathElement;
-          clone.removeAttribute("fill");
-          clone.setAttribute("stroke", "currentColor");
-          clones.push(clone);
-          frag.appendChild(clone);
+        if ((i + 1) % ANIM_CHUNK === 0) {
+          await yieldToMain();
+          if (cancelled) {
+            for (const a of drawAnims) if (a) a.cancel();
+            return;
+          }
         }
-        parallaxGroup.appendChild(frag);
-        svg.appendChild(parallaxGroup);
-        host.appendChild(svg);
+      }
+      drawAnimationsRef.current = drawAnims;
 
-        const lengths = new Float32Array(clones.length);
-        for (let i = 0; i < clones.length; i++) {
-          lengths[i] = clones[i].getTotalLength();
-        }
-        for (let i = 0; i < clones.length; i++) {
-          const len = lengths[i];
-          clones[i].style.strokeDasharray = `${len}`;
-          clones[i].style.strokeDashoffset = prefersReducedMotion
-            ? "0"
-            : `${len}`;
-        }
+      try {
+        await Promise.all(drawAnims.map((a) => a.finished));
+      } catch {
+        return;
+      }
+      if (cancelled) return;
+      setDrawComplete(true);
+    };
 
-        if (prefersReducedMotion) {
-          setDrawComplete(true);
-          return;
-        }
-
-        const n = clones.length;
-        const perPathDuration = Math.max(
-          60,
-          DRAW_DURATION_MS - DRAW_STAGGER_MS,
-        );
-        const drawAnims: Animation[] = [];
-        for (let i = 0; i < n; i++) {
-          const len = lengths[i];
-          const delay = (i / n) * DRAW_STAGGER_MS;
-          const anim = clones[i].animate(
-            [{ strokeDashoffset: len }, { strokeDashoffset: 0 }],
-            {
-              duration: perPathDuration,
-              delay,
-              easing: "ease-out",
-              fill: "forwards",
-            },
-          );
-          drawAnims.push(anim);
-        }
-        drawAnimationsRef.current = drawAnims;
-
-        Promise.all(drawAnims.map((a) => a.finished))
-          .then(() => {
-            if (cancelled) return;
-            setDrawComplete(true);
-
-            if (!window.matchMedia("(min-width: 768px)").matches) return;
-            if (isLowEndDevice()) return;
-
-            const overall = parallaxGroup.getBBox();
-            const maxW = overall.width * SQUARE_MAX_BBOX_FRAC;
-            const maxH = overall.height * SQUARE_MAX_BBOX_FRAC;
-            const squareIndices: number[] = [];
-            for (let i = 0; i < clones.length; i++) {
-              const b = clones[i].getBBox();
-              if (b.width === 0 || b.height === 0) continue;
-              const aspect = b.width / b.height;
-              const isSquareish =
-                aspect >= SQUARE_ASPECT_MIN && aspect <= SQUARE_ASPECT_MAX;
-              const isSmall = b.width <= maxW && b.height <= maxH;
-              if (isSquareish && isSmall) squareIndices.push(i);
-            }
-
-            if (squareIndices.length === 0) return;
-
-            const burstAnims: Animation[] = [];
-            for (const idx of squareIndices) {
-              const path = clones[idx];
-              path.style.willChange = "opacity";
-              const period =
-                TWINKLE_PERIOD_MS +
-                (Math.random() - 0.5) * 2 * TWINKLE_PERIOD_JITTER_MS;
-              const startDelay = Math.random() * period;
-              const anim = path.animate(
-                [
-                  { opacity: 1 },
-                  { opacity: TWINKLE_DIP_OPACITY, offset: 0.5 },
-                  { opacity: 1 },
-                ],
-                {
-                  duration: period,
-                  delay: startDelay,
-                  iterations: Infinity,
-                  easing: "ease-in-out",
-                },
-              );
-              burstAnims.push(anim);
-            }
-            burstAnimationsRef.current = burstAnims;
-          })
-          .catch(() => {});
-      })
-      .catch(() => {});
+    const cancelIdle = scheduleIdle(() => {
+      void run();
+    });
 
     return () => {
       cancelled = true;
+      cancelIdle();
       for (const a of drawAnimationsRef.current) a.cancel();
       drawAnimationsRef.current = [];
-      for (const a of burstAnimationsRef.current) a.cancel();
-      burstAnimationsRef.current = [];
       if (hostRef.current) hostRef.current.innerHTML = "";
     };
   }, []);
@@ -227,60 +258,12 @@ export function SignatureCanvas() {
           if (visible) a.play();
           else a.pause();
         }
-        for (const a of burstAnimationsRef.current) {
-          if (visible) a.play();
-          else a.pause();
-        }
       },
       { rootMargin: "100px" },
     );
     observer.observe(host);
     return () => observer.disconnect();
   }, []);
-
-  useEffect(() => {
-    if (!drawComplete) return;
-
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    if (prefersReducedMotion) return;
-
-    const g = innerGroupRef.current;
-    const host = hostRef.current;
-    if (!g || !host) return;
-
-    g.style.willChange = "transform";
-
-    let ticking = false;
-    const update = () => {
-      ticking = false;
-      const section = host.closest("section");
-      if (!section) return;
-      const rect = section.getBoundingClientRect();
-      const h = rect.height || 1;
-      const progress = Math.max(0, Math.min(1, -rect.top / h));
-      const ty = progress * -PARALLAX_TRANSLATE_PX;
-      const scale = 1 + progress * PARALLAX_SCALE_AMOUNT;
-      g.style.transform = `translate3d(0, ${ty}px, 0) scale(${scale})`;
-      g.style.transformOrigin = "center center";
-    };
-
-    const onScroll = () => {
-      if (ticking) return;
-      ticking = true;
-      rafRef.current = requestAnimationFrame(update);
-    };
-
-    update();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
-      rafRef.current = null;
-      if (g) g.style.willChange = "";
-    };
-  }, [drawComplete]);
 
   const mobileFadeMask =
     "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)";
