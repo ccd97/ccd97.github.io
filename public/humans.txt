@@ -1,0 +1,14 @@
+/* TEAM */
+Owner: Cyprien Dcunha
+Role: Senior Software Engineer
+Contact: dcunha.cyprien@gmail.com
+Site: https://ccd97.github.io
+GitHub: https://github.com/ccd97
+LinkedIn: https://www.linkedin.com/in/ccd97
+Location: Hyderabad, India
+
+/* SITE */
+Last update: 2026
+Standards: HTML5, CSS3, TypeScript, React
+Components: Vite, Tailwind CSS, Radix UI, Lucide
+Hosted on: GitHub Pages

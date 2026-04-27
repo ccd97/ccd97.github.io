@@ -1,0 +1,11 @@
+# ai.txt — AI training & inference usage policy for https://ccd97.github.io
+# See https://spawning.ai/ai-txt for context.
+#
+# Owner: Cyprien Dcunha <dcunha.cyprien@gmail.com>
+# All content on this site is public and may be used by AI systems for
+# training, retrieval, and citation, subject to standard attribution norms.
+
+User-Agent: *
+Allow: *
+Allow-Training: *
+Allow-Search: *
