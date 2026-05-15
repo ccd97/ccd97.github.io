@@ -388,10 +388,10 @@
         ]
       },
       {
-        "name": "Portfolio & Résumé",
+        "name": "Portfolio & Resume",
         "repo": "ccd97.github.io",
         "type": "github",
-        "description": "This site — a React + TypeScript portfolio and résumé, deployed on GitHub Pages.",
+        "description": "This site — a React + TypeScript portfolio and Resume, deployed on GitHub Pages.",
         "tools": [
           "TypeScript",
           "React",
@@ -530,7 +530,7 @@
         "icon": "linkedin"
       },
       {
-        "label": "Résumé",
+        "label": "Resume",
         "href": "./resume.html",
         "icon": "idcard"
       }

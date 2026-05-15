@@ -4,8 +4,12 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "generate:resume-assets": "node scripts/generate-resume-assets.mjs",
+    "predev": "npm run generate:resume-assets",
     "dev": "vite",
+    "prebuild": "npm run generate:resume-assets",
     "build": "tsc -b && vite build",
+    "prepreview": "npm run generate:resume-assets",
     "preview": "vite preview"
   },
   "dependencies": {

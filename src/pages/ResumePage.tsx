@@ -6,12 +6,36 @@ import { ResumeIcon } from "@/components/resume/ResumeIcon";
 import { ResumeSelector } from "@/components/resume/ResumeSelector";
 import { PdfViewer } from "@/components/resume/PdfViewer";
 import resumeData from "@/data/resume.json";
+import pdfVariantsData from "@/data/pdfVariants.json";
 import portfolioData from "@/data/portfolio.json";
-import type { ResumeData } from "@/types/resume";
+import type { PdfVariant, ResumeData } from "@/types/resume";
 import type { PortfolioData } from "@/types/portfolio";
 
 const data = resumeData as ResumeData;
+const pdfVariants = pdfVariantsData as PdfVariant[];
 const { hero } = portfolioData as PortfolioData;
+const variantPagePaths = Object.fromEntries(
+  pdfVariants.map((variant) => [variant.slug, `/resume/${variant.slug}`]),
+);
+
+function getLinkedVariantSlug() {
+  const isKnownVariant = (slug: string | null) =>
+    Boolean(slug && pdfVariants.some((v) => v.slug === slug));
+
+  const cleanPathMatch = window.location.pathname.match(/\/resume\/([\w-]+)\/?$/);
+  if (isKnownVariant(cleanPathMatch?.[1] ?? null)) return cleanPathMatch?.[1] ?? null;
+
+  const legacyPathMatch = window.location.pathname.match(/\/resume-([\w-]+)(?:\.html)?\/?$/);
+  if (isKnownVariant(legacyPathMatch?.[1] ?? null)) return legacyPathMatch?.[1] ?? null;
+
+  const querySlug = new URLSearchParams(window.location.search).get("pdf");
+  if (isKnownVariant(querySlug)) return querySlug;
+
+  const hashSlug = new URLSearchParams(window.location.hash.replace(/^#/, "")).get("pdf");
+  if (isKnownVariant(hashSlug)) return hashSlug;
+
+  return null;
+}
 
 function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
@@ -25,12 +49,13 @@ export function ResumePage() {
   const [selected, setSelected] = useState<string>("html");
   const [copied, setCopied] = useState(false);
   const [fromDirectLink, setFromDirectLink] = useState(false);
-  const variant = data.pdfVariants.find((v) => v.slug === selected);
+  const variant = pdfVariants.find((v) => v.slug === selected);
 
   const shareUrl = (() => {
     if (typeof window === "undefined") return "";
-    const base = `${window.location.origin}${window.location.pathname}`;
-    return variant ? `${base}#pdf=${variant.slug}` : base;
+    return variant
+      ? `${window.location.origin}${variantPagePaths[variant.slug]}`
+      : `${window.location.origin}/resume.html`;
   })();
 
   const handleShare = async () => {
@@ -58,10 +83,9 @@ export function ResumePage() {
   };
 
   useEffect(() => {
-    const match = window.location.hash.match(/pdf=([\w-]+)/);
-    if (!match) return;
-    if (data.pdfVariants.some((v) => v.slug === match[1])) {
-      setSelected(match[1]);
+    const linkedVariant = getLinkedVariantSlug();
+    if (linkedVariant) {
+      setSelected(linkedVariant);
       setFromDirectLink(true);
     }
   }, []);
@@ -150,7 +174,7 @@ export function ResumePage() {
         {!fromDirectLink && (
           <div className="mb-4 flex justify-end">
             <ResumeSelector
-              variants={data.pdfVariants}
+              variants={pdfVariants}
               value={selected}
               onChange={setSelected}
             />

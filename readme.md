@@ -1,7 +1,7 @@
 # My Portfolio
 
 - Portfolio – [ccd97.github.io](https://ccd97.github.io/)
-- Résumé – [ccd97.github.io/resume.html](https://ccd97.github.io/resume.html)
+- Resume – [ccd97.github.io/resume.html](https://ccd97.github.io/resume.html)
 
 Built with [Vite](https://vitejs.dev/), [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/), and [shadcn/ui](https://ui.shadcn.com/).
 
@@ -13,6 +13,18 @@ npm run dev       # start dev server (http://localhost:5173)
 npm run build     # production build → dist/
 npm run preview   # serve the production build locally
 ```
+
+## Resume variants
+
+Resume PDF variants are defined in [`src/data/pdfVariants.json`](src/data/pdfVariants.json).
+To add a new shareable variant, place the PDF in `public/resumes/` and add an entry like:
+
+```json
+{ "slug": "ml", "label": "ML-focused", "file": "ccd97-resume-ml.pdf" }
+```
+
+`npm run dev` and `npm run build` automatically generate clean resume pages and update `public/sitemap.xml`.
+Use the generated `/resume/<slug>` URL when sharing on LinkedIn, Facebook, or other social previews.
 
 ## Project structure
 

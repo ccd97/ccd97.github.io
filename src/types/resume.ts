@@ -26,6 +26,8 @@ export interface PdfVariant {
   slug: string;
   label: string;
   file: string;
+  shareTitle?: string;
+  shareDescription?: string;
 }
 
 export interface ResumeData {
@@ -37,5 +39,4 @@ export interface ResumeData {
   achievements: string[];
   leadership: string[];
   seo: string[];
-  pdfVariants: PdfVariant[];
 }

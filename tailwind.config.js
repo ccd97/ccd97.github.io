@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: "class",
-  content: ["./index.html", "./resume.html", "./src/**/*.{ts,tsx}"],
+  content: ["./index.html", "./resume*.html", "./resume/**/*.html", "./src/**/*.{ts,tsx}"],
   theme: {
     container: {
       center: true,

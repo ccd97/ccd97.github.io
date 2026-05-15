@@ -8,6 +8,10 @@ dist
 dist-ssr
 .vite
 
+# generated resume variant pages
+/resume/
+/resume-*.html
+
 # logs
 npm-debug.log*
 yarn-debug.log*
@@ -29,3 +33,6 @@ lerna-debug.log*
 .env.*
 !.env.example
 *.local
+
+# Claude
+.claude

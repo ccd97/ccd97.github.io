@@ -50,7 +50,7 @@ export function Hero({ hero, email }: Props) {
             href="./resume.html"
             className="inline-flex items-center gap-2 rounded-md bg-foreground text-background px-5 py-2.5 text-sm font-medium transition-colors hover:bg-foreground/85"
           >
-            View résumé <ArrowUpRight className="h-4 w-4" />
+            View Resume <ArrowUpRight className="h-4 w-4" />
           </a>
           <a
             href={`mailto:${email}`}

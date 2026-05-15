@@ -1,0 +1,26 @@
+[
+    {
+        "slug": "latest",
+        "label": "Latest",
+        "file": "ccd97-resume-latest.pdf",
+        "shareDescription": "Cyprien Dcunha is a Senior Software Engineer with deep experience in distributed systems, event-driven backend platforms, cloud infrastructure, and applied GenAI."
+    },
+    {
+        "slug": "backend",
+        "label": "Backend-focused",
+        "file": "ccd97-resume-backend.pdf",
+        "shareDescription": "Cyprien Dcunha is a backend-focused Senior Software Engineer who has built distributed, event-driven platforms across AWS, GCP, Kubernetes, Java, and Python."
+    },
+    {
+        "slug": "ai",
+        "label": "AI / GenAI-focused",
+        "file": "ccd97-resume-ai.pdf",
+        "shareDescription": "Cyprien Dcunha is a Senior Software Engineer with production GenAI experience across LLM reconciliation, RAG, LangChain, AWS Bedrock, and agentic systems."
+    },
+    {
+        "slug": "infra",
+        "label": "Infra-focused",
+        "file": "ccd97-resume-infra.pdf",
+        "shareDescription": "Cyprien Dcunha is a platform-minded Senior Software Engineer experienced in cloud migrations, Kubernetes, GKE, Cloud SQL, production readiness, AWS, and GCP."
+    }
+]

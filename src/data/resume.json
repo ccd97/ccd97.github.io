@@ -137,11 +137,5 @@
         " EC2, Lambda, ECS, EKS, GKE, S3, RDS, DynamoDB, Cloud SQL, VPC, API Gateway, CloudFormation, CloudWatch, Step Functions, EventBridge, SQS, SNS, Redshift",
         " Gen-AI, LLMs, Prompt Engineering, RAG, Agent Memory, AWS Bedrock, AWS AgentCore, Tensorflow, LangChain, NumPy, Pandas",
         " Microservices, DevOps, CI/CD, Agile, System Design, Scalability, Performance Optimization, Security, AWS CLI, AWS SDK, Event-Driven, Domain-Driven"
-    ],
-    "pdfVariants": [
-        { "slug": "latest", "label": "Latest", "file": "ccd97-resume-latest.pdf" },
-        { "slug": "backend", "label": "Backend-focused", "file": "ccd97-resume-backend.pdf" },
-        { "slug": "ai", "label": "AI-focused", "file": "ccd97-resume-ai.pdf" },
-        { "slug": "infra", "label": "Infra-focused", "file": "ccd97-resume-infra.pdf" }
     ]
 }
