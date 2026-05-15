@@ -13,7 +13,7 @@ Senior Software Engineer · Staff Software Engineer · Senior Backend Engineer �
 
 ## Summary
 
-Senior software engineer with deep experience in **distributed systems, event-driven architecture, and applied Generative AI**. Currently at **Salesforce Core Infra**, leading AWS-to-GCP service uplifts. Previously **nearly 6 years at Amazon (FAANG / Big Five) Finance Automation** — one of the most demanding engineering environments in the industry — where he co-architected a large-scale event-driven vendor-payments platform, built a self-service rule engine, and shipped a production LLM-driven reconciliation engine (RAG, AWS Bedrock, LangChain). Strong hybrid profile: can both design high-throughput distributed systems and ship production GenAI inside them.
+Senior software engineer with deep experience in **distributed systems, event-driven architecture, and GenAI automation**. Currently at **Salesforce Hyperforce AI**, building agentic SDLC tooling and IDE plugins. Previously **nearly 6 years at Amazon (FAANG / Big Five) Finance Automation** — one of the most demanding engineering environments in the industry — where he co-architected a large-scale event-driven vendor-payments platform, built a self-service rule engine, and shipped a production LLM-driven reconciliation engine (RAG, AWS Bedrock, LangChain). Strong hybrid profile: can both design high-throughput distributed systems and ship production GenAI inside them.
 
 ## Skills
 
@@ -35,11 +35,15 @@ Senior software engineer with deep experience in **distributed systems, event-dr
 
 ## Experience
 
-### Salesforce — Senior Software Engineer, Core Infra
+### Salesforce — Senior Software Engineer, Hyperforce AI
 *Nov 2025 – present · Hyderabad, India*
 
-Lead on the **Core & Platform Services GCP Uplift** programme — porting AWS-native core services onto GCP. Among the first AWS-to-GCP service uplifts in the platform org.
+**Agentic SDLC Tooling** — building IDE plugins, MCPs, and autonomous Agent Skills to accelerate developer productivity and drive AI adoption across engineering.
+- Achieved almost 100% weekly AI engagement across the engineering team.
+- Reduced on-call incident analysis time by 5x and cut PR review wait times by ~50%.
+- Implemented Spec-Driven Development (SDD) workflows for pre-merge code quality checks.
 
+Lead on the **Core & Platform Services GCP Uplift** programme — porting AWS-native core services onto GCP. Among the first AWS-to-GCP service uplifts in the platform org.
 - Stood up GCP infrastructure (GKE, Cloud SQL) for each service in preprod and prod.
 - Ran production readiness sign-offs and operational tooling before taking traffic.
 - Coordinated upstream and downstream changes with dependency teams.
@@ -88,11 +92,11 @@ Lead on the **Core & Platform Services GCP Uplift** programme — porting AWS-na
 - Made new-merchant onboarding config-driven across 20+ upstream sources.
 - *Tech: Java · AWS.*
 
-### IRageCapital Advisory — C++ Development Intern
+### IRageCapital - High-Frequency Trading — C++ Development Intern
 *Jun 2017 – Aug 2017 · Mumbai, India*
 
 - C++17 HFT market-replay simulator with lock-free hot-path data structures.
-- Profiled and tuned to sub-50ns per-execution latency.
+- Profiled and tuned to sub-50µs per-execution latency.
 - *Tech: C++17 · Low-latency systems.*
 
 ## Education

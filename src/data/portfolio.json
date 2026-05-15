@@ -1,8 +1,8 @@
 {
   "hero": {
     "name": "Cyprien Dcunha",
-    "tagline": "Senior SDE @ Salesforce ｜ Ex-Amazon ｜ Expert in Distributed & Event-driven Systems, Agentic Automation, & Cloud Infrastructure.",
-    "currently": "Engineering multi-substrate infrastructure at Salesforce",
+    "tagline": "Senior SDE @ Salesforce ｜ Ex-Amazon ｜ Expert in Distributed & Event-driven Systems, GenAI Automation, & Cloud Infrastructure.",
+    "currently": "Engineering AI SDLC plugins at Salesforce",
     "location": "Hyderabad, India"
   },
   "work": {
@@ -11,7 +11,7 @@
       {
         "id": "sfdc-sde",
         "company": "Salesforce",
-        "org": "Core Infra",
+        "org": "Hyperforce AI",
         "role": "Senior Software Engineer",
         "start": "Nov 2025",
         "end": null,
@@ -37,8 +37,8 @@
       },
       {
         "id": "irage-intern",
-        "company": "IRageCapital Advisory",
-        "org": null,
+        "company": "IRageCapital",
+        "org": "High-Frequency Trading",
         "role": "C++ Development Intern",
         "start": "Jun 2017",
         "end": "Aug 2017",
@@ -47,12 +47,55 @@
     ],
     "caseStudies": [
       {
+        "id": "sfdc-ai-plugins",
+        "title": "Agentic SDLC Tooling",
+        "org": "Salesforce Central AI",
+        "role": "Senior Software Engineer",
+        "duration": "2026 – Present",
+        "summary": "Built IDE plugins, MCPs, and autonomous Agent Skills to accelerate developer productivity and drive AI adoption across engineering.",
+        "metrics": [
+          {
+            "label": "Target Productivity",
+            "value": "3x"
+          },
+          {
+            "label": "Target AI adoption",
+            "value": "100%"
+          },
+          {
+            "label": "PR cycle time reduction",
+            "value": "50%"
+          }
+        ],
+        "tech": [
+          "Python",
+          "LLMs",
+          "MCPs",
+          "Agent Skills",
+          "Agentic Workflows"
+        ],
+        "problem": "Standard SDLC workflows—such as PR reviews, incident triage, and environment setups—create significant bottlenecks that hinder engineering velocity.",
+        "approach": [
+          "Developed an IDE plugin to provide a paved-path AI environment setup with custom MCPs, Hooks, and AI rules.",
+          "Built autonomous Agent Skills to monitor CI pipelines, assist with PR reviews, and aid in incident triage.",
+          "Implemented Spec-Driven Development (SDD) workflows to automate test generation and pre-merge code quality checks."
+        ],
+        "outcome": [
+          "Achieved almost 100% weekly AI engagement across the engineering team.",
+          "Reduced on-call incident analysis time by 5x and cut PR review wait times by ~50%.",
+          "Improved CI pipeline stability by automating test generation and pre-merge checks."
+        ],
+        "roleIds": [
+          "sfdc-sde"
+        ]
+      },
+      {
         "id": "sfdc-gcp-uplift",
-        "title": "Core & Platform Services GCP Uplift",
+        "title": "Multi-Substrate Infrastructure",
         "org": "Salesforce Core Infra",
         "role": "Lead",
         "duration": "Nov 2025 – Present",
-        "summary": "Porting AWS-native core services onto GCP. First AWS-to-GCP uplifts in the platform org; four shipped so far.",
+        "summary": "Established multi-cloud infrastructure, extending four core/platform native-AWS services to GCP.",
         "metrics": [
           {
             "label": "Services uplifted",
@@ -63,7 +106,7 @@
           "Java",
           "AWS",
           "GCP",
-          "GKE",
+          "Terraform",
           "Kubernetes"
         ],
         "problem": "Core and platform services ran only on AWS. Each uplift meant standing up GCP infra, getting it production-ready, and moving live customers across.",
@@ -133,7 +176,7 @@
       },
       {
         "id": "llm-recon",
-        "title": "LLM-driven Financial Reconciliation Engine",
+        "title": "LLM-driven Reconciliation Engine",
         "org": "Amazon Finance Automation",
         "role": "Individual contributor",
         "duration": "2024 – 2025",
@@ -321,14 +364,14 @@
       {
         "id": "irage-sim",
         "title": "Stock Market Simulator",
-        "org": "IRageCapital Advisory",
+        "org": "IRageCapital - High-Frequency Trading",
         "role": "Intern",
         "duration": "Jun 2017 – Aug 2017",
-        "summary": "C++ HFT market replay simulator at <50ns per-execution latency.",
+        "summary": "C++ HFT market replay simulator at <50µs per-execution latency.",
         "metrics": [
           {
             "label": "Per-execution latency",
-            "value": "<50ns"
+            "value": "<50µs"
           }
         ],
         "tech": [
@@ -338,7 +381,7 @@
         "problem": "The firm needed to backtest trading strategies against historical market data without running a full exchange simulator.",
         "approach": [
           "C++17 replay engine with lock-free data structures on the hot path.",
-          "Profiled and tuned to hold per-execution latency under 50ns."
+          "Profiled and tuned to hold per-execution latency under 50µs."
         ],
         "outcome": [
           "Backtesting tool for strategy evaluation at realistic execution-time latencies."
@@ -459,7 +502,24 @@
         ]
       },
       {
-        "title": "AWS",
+        "title": "Gen-AI & ML",
+        "items": [
+          "LLMs",
+          "Agent Skills",
+          "Agent Memory",
+          "AWS Bedrock",
+          "AWS AgentCore",
+          "RAG",
+          "LangChain",
+          "Prompt Engineering",
+          "TensorFlow",
+          "PyTorch",
+          "NumPy",
+          "Pandas"
+        ]
+      },
+      {
+        "title": "AWS & GCP",
         "items": [
           "Lambda",
           "ECS",
@@ -469,33 +529,10 @@
           "DynamoDB",
           "RDS",
           "S3",
-          "Redshift"
-        ]
-      },
-      {
-        "title": "GCP & Cloud-Native",
-        "items": [
+          "Redshift",
           "Cloud SQL",
           "GKE",
-          "Docker",
-          "Kubernetes",
-          "Jenkins",
-          "Spinnaker"
-        ]
-      },
-      {
-        "title": "Gen-AI & ML",
-        "items": [
-          "LLMs",
-          "Prompt Engineering",
-          "RAG",
-          "Agent Memory",
-          "AWS Bedrock",
-          "AWS AgentCore",
-          "LangChain",
-          "TensorFlow",
-          "NumPy",
-          "Pandas"
+          "Vertex AI"
         ]
       },
       {
@@ -503,7 +540,10 @@
         "items": [
           "JUnit",
           "Gradle",
-          "CI/CD",
+          "Docker",
+          "Kubernetes",
+          "Jenkins & CI/CD",
+          "Spinnaker",
           "Load & canary testing",
           "Git",
           "Agile / Scrum"

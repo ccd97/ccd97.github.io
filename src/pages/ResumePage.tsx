@@ -226,7 +226,7 @@ export function ResumePage() {
 
               <SectionTitle>Projects</SectionTitle>
               <ul className="space-y-4">
-                {data.projects.map((p, i) => (
+                {data.projects.filter((p) => !p.hidden).map((p, i) => (
                   <li key={i}>
                     <div className="font-semibold">{p.name}</div>
                     <ul className="mt-1 space-y-1">

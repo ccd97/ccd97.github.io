@@ -3,24 +3,28 @@
         "slug": "latest",
         "label": "Latest",
         "file": "ccd97-resume-latest.pdf",
-        "shareDescription": "Cyprien Dcunha is a Senior Software Engineer with deep experience in distributed systems, event-driven backend platforms, cloud infrastructure, and applied GenAI."
+        "shareTitle": "Cyprien Dcunha — Senior Software Engineer — Resume (Latest)",
+        "shareDescription": "Cyprien Dcunha is a Senior Software Engineer with 7+ years of experience in large-scale distributed systems, GenAI/Agentic systems, high-throughput backend platforms, and cloud infrastructure."
     },
     {
         "slug": "backend",
         "label": "Backend-focused",
         "file": "ccd97-resume-backend.pdf",
-        "shareDescription": "Cyprien Dcunha is a backend-focused Senior Software Engineer who has built distributed, event-driven platforms across AWS, GCP, Kubernetes, Java, and Python."
+        "shareTitle": "Cyprien Dcunha — Senior Software Engineer — Resume (Backend)",
+        "shareDescription": "Cyprien Dcunha is a backend-focused Senior Software Engineer with 7+ years of experience in large-scale distributed systems, high-throughput & low-latency event-driven microservices, and orchestration systems."
     },
     {
         "slug": "ai",
         "label": "AI / GenAI-focused",
         "file": "ccd97-resume-ai.pdf",
-        "shareDescription": "Cyprien Dcunha is a Senior Software Engineer with production GenAI experience across LLM reconciliation, RAG, LangChain, AWS Bedrock, and agentic systems."
+        "shareTitle": "Cyprien Dcunha — Senior Software Engineer — Resume (AI / GenAI)",
+        "shareDescription": "Cyprien Dcunha is a Senior Software Engineer with extensive experience in production GenAI and Agentic Systems, RAG systems, LLM fine-tuning, and core AI capabilities."
     },
     {
         "slug": "infra",
         "label": "Infra-focused",
         "file": "ccd97-resume-infra.pdf",
-        "shareDescription": "Cyprien Dcunha is a platform-minded Senior Software Engineer experienced in cloud migrations, Kubernetes, GKE, Cloud SQL, production readiness, AWS, and GCP."
+        "shareTitle": "Cyprien Dcunha — Senior Software Engineer — Resume (Infra)",
+        "shareDescription": "Cyprien Dcunha is a Senior Software Engineer experienced in multi-cloud architecture, fault-tolerant infrastructure, microservices scaling, and cloud security."
     }
 ]

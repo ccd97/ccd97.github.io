@@ -20,6 +20,7 @@ export interface Education {
 export interface ResumeProject {
   name: string;
   description: string[];
+  hidden?: boolean;
 }
 
 export interface PdfVariant {

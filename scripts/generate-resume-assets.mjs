@@ -33,7 +33,7 @@ function validateVariant(variant) {
 }
 
 function titleFor(variant) {
-  return variant.shareTitle ?? `${personName} — ${variant.label} Resume`;
+  return variant.shareTitle ?? `${personName} — Resume (${variant.label})`;
 }
 
 function descriptionFor(variant) {

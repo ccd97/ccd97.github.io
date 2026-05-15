@@ -42,7 +42,7 @@ export function ExperienceTimeline({ roles, selectedId, onSelect }: Props) {
                   >
                     {role.company}
                     {role.org ? (
-                      <span className="text-muted-foreground font-normal">
+                      <span className="text-muted-foreground font-normal text-sm">
                         {" "}
                         · {role.org}
                       </span>

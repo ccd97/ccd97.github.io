@@ -31,7 +31,7 @@
         "Lambda, ECS, SQS/SNS, DynamoDB, S3",
         "RDS, Redshift, Step Fn, IAM, ",
         "GCP - Cloud SQL, GKE, Vertex AI",
-        "LLMs, RAG, Prompt Engineering, Agents",
+        "LLMs, RAG, Prompt Engineering, GenAI Automation, Agent skills",
         "AWS Bedrock, AgentCore, LangChain, Tensorflow, PyTorch",
         "Distributed Systems, Microservices",
         "Event-Driven, Domain-Driven, REST APIs",
@@ -42,7 +42,7 @@
     "experiences":[
         {
             "role": "Senior Software Development Engineer",
-            "firm":"Salesforce - Core Infra",
+            "firm":"Salesforce - Hyperforce AI",
             "duration":"Nov 2025 – Present"
         },
         {
@@ -57,7 +57,7 @@
         },
         {
             "role":"C++ development Intern",
-            "firm":"IRageCapital Advisory Pvt. Ltd., Mumbai",
+            "firm":"IRageCapital - High-Frequency Trading",
             "duration":"Jun 2017 – Aug 2017"
         }
     ],
@@ -71,16 +71,22 @@
     ],
     "projects":[
         {
+            "name":"Salesforce: Agentic SDLC Tooling",
+            "description": [
+                "Built <b>IDE plugins, MCPs, and autonomous Agent Skills</b> to accelerate developer productivity and drive AI adoption across engineering.",
+                "Achieved almost <b>100% weekly AI engagement</b>, reduced on-call incident analysis time by <b>5x</b>, and cut PR review wait times by <b>~50%</b>."
+            ]
+        },
+        {
             "name":"Salesforce: Core & Platform Services GCP Uplift",
             "description": [
-                "Ported AWS-native core services to GCP — shipped <b>Key Broker, DocGen, and PDFGen</b> live on GCP.",
-                "First <b>AWS-to-GCP uplifts</b> in the platform team and wider org."
+                "Led the first <b>AWS-to-GCP uplifts</b> in the organization, establishing foundational GCP infrastructure and executing the end-to-end migration of <b>4 core services</b> to serve live customer traffic."
             ]
         },
         {
             "name":"Amazon VendorHoldbacks: Re-Architecture",
             "description": [
-                "Drove re-architecture from monolith to <b>11 microservices</b>, leading a team of 3 developers, enabling <b>6M transactions worth $2.1B</b> at 2000 TPS.",
+                "Drove re-architecture from monolith to <b>11 microservices</b>, leading 3 developers, enabling <b>6M transactions worth $2.1B</b> at 2000 TPS.",
                 "Transformed batch processing to event-driven architecture, slashing processing time <b>from 24h to near real-time</b> and reducing vendor inquiries by <b>23.5%</b> across <b>14+ countries.</b>"
             ]
         },
@@ -95,7 +101,7 @@
             "name":"Amazon VendorHoldbacks: Rule Engine",
             "description": [
                 "Architected a high-throughput Rule Engine processing <b>5,000+ concurrent business rules</b> with <b>50ms latency</b> at <b>2,000 TPS</b>.",
-                "Introduced self-service portal cutting rule creation time from <b>4 weeks to minutes</b>, incorporating versatile business logic via the <b>Drools framework</b>."
+                "Introduced a self-service portal cutting rule creation time from <b>4 weeks to minutes</b>, enabling the business team to fully manage rule authoring and deployment."
             ]
         },
         {
@@ -107,8 +113,25 @@
         },
         {
             "name":"Amazon Approvals: Emails",
+            "hidden": true,
             "description": [
                 "Built highly configurable email orchestration system handling approval and reminder emails for sending up to <b>200K approval emails per day</b>."
+            ]
+        },
+        {
+            "name":"Amazon: Special Merchant Data Segregation",
+            "hidden": true,
+            "description": [
+                "Separated views, APIs, and reports between general vendors and special merchants across <b>20+ input sources</b>.",
+                "Implemented config-driven onboarding, reducing new-merchant onboarding from multi-team code changes to a single config entry."
+            ]
+        },
+        {
+            "name":"IRageCapital: Stock Market Simulator",
+            "hidden": true,
+            "description": [
+                "Developed a C++17 HFT market replay simulator with lock-free data structures on the hot path.",
+                "Profiled and tuned to hold per-execution latency under <b>50µs</b> for strategy backtesting."
             ]
         }
     ],
@@ -127,14 +150,14 @@
         " Java, Python, C++, JavaScript, TypeScript, SQL, MySQL, AWS, GCP, Azure, Google Cloud, Salesforce",
         " Docker, Kubernetes, Git, Jenkins, Spinnaker, REST APIs, Microservices, Software Development, Software Engineering, Software Architecture",
         " System Design, Database Design, Object-Oriented Programming (OOP), Agile, Scrum, DevOps, CI/CD, Testing, Debugging, Troubleshooting",
-        " Algorithms, Data Structures, Web Development, Cloud Computing, SDLC, Technical Leadership, Distributed Systems, Agentic Systems",
+        " Algorithms, Data Structures, Web Development, Cloud Computing, SDLC, Technical Leadership, Distributed Systems, GenAI Automation",
         " Web Services, Integration, Software Design Patterns, Version Control, Quality Assurance, Performance Optimization",
         " Scalability, Security, Linux, Windows, Scripting, Frameworks, Libraries, Database Management, Technical Documentation",
         " API Integration, Full Stack Development, Backend Development, Frontend Development, Encryption, Multi-Cloud",
         " Agile, Scrum, SDLC, TDD, CI/CD Pipelines, DevOps Practices, Software Development Life Cycle",
         " Leadership, Team Management, Mentoring, Collaboration, Communication, Problem-solving, Critical Thinking, Innovation, Developed, Architected",
         " Implemented, Optimized, Designed, Deployed, Led, Managed, Mentored, Integrated, Automated, Streamlined, Refactored, Debugged, Evaluated, Spearheaded, Resolved",
-        " EC2, Lambda, ECS, EKS, GKE, S3, RDS, DynamoDB, Cloud SQL, VPC, API Gateway, CloudFormation, CloudWatch, Step Functions, EventBridge, SQS, SNS, Redshift",
+        " EC2, Lambda, ECS, EKS, S3, RDS, DynamoDB, Cloud SQL, VPC, API Gateway, CloudFormation, CloudWatch, Step Functions, EventBridge, SQS, SNS, Redshift",
         " Gen-AI, LLMs, Prompt Engineering, RAG, Agent Memory, AWS Bedrock, AWS AgentCore, Tensorflow, LangChain, NumPy, Pandas",
         " Microservices, DevOps, CI/CD, Agile, System Design, Scalability, Performance Optimization, Security, AWS CLI, AWS SDK, Event-Driven, Domain-Driven"
     ]

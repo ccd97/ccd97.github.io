@@ -16,14 +16,14 @@ export default {
     },
     extend: {
       fontFamily: {
-        serif: ['"Sofia"','"Instrument Serif"', "serif"],
+        serif: ['"Sofia"','"Rasa"', "serif"],
         sans: ['"Inter"', "system-ui", "sans-serif"],
         mono: ['"JetBrains Mono"', "ui-monospace", "monospace"],
-        bitter: ['"Instrument Serif"', "serif"],
+        bitter: ['"Rasa"', "serif"],
         noto: ['"Inter"', "system-ui", "sans-serif"],
         hero: ['"Mozilla Headline"', "cursive"],
         display: ['"Playfair Display"', "serif"],
-        card: ['"Instrument Serif"', "serif"],
+        card: ['"Rasa"', "serif"],
       },
       colors: {
         brand: "hsl(var(--accent))",
