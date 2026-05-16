@@ -65,14 +65,14 @@ function renderVariantPage(variant) {
     <meta name="description" content="${description}" />
     <link rel="canonical" href="${pageUrl}" />
     <meta property="og:title" content="${title}" />
-    <meta property="og:image" content="${siteUrl}/media/ccd97.png" />
+    <meta property="og:image" content="${siteUrl}/media/og-resume.png" />
     <meta property="og:description" content="${description}" />
     <meta property="og:type" content="profile" />
     <meta property="og:url" content="${pageUrl}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${title}" />
     <meta name="twitter:description" content="${description}" />
-    <meta name="twitter:image" content="${siteUrl}/media/ccd97.png" />
+    <meta name="twitter:image" content="${siteUrl}/media/og-resume.png" />
     <link rel="alternate" type="application/pdf" title="${escapeHtml(pdfTitle)}" href="${pdfUrl}" />
     <link rel="icon" type="image/png" href="/media/tabicon.ico" />
     <script>

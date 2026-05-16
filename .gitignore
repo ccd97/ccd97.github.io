@@ -12,6 +12,10 @@ dist-ssr
 /resume/
 /resume-*.html
 
+# generated OG image assets
+/public/media/og-*.png
+/public/media/og-*.svg
+
 # logs
 npm-debug.log*
 yarn-debug.log*
