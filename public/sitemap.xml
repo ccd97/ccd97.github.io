@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ccd97.github.io/</loc>
+    <loc>https://cyprien.in/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ccd97.github.io/resume.html</loc>
+    <loc>https://cyprien.in/resume.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ccd97.github.io/resume/latest</loc>
+    <loc>https://cyprien.in/resume/latest</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ccd97.github.io/resume/backend</loc>
+    <loc>https://cyprien.in/resume/backend</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ccd97.github.io/resume/ai</loc>
+    <loc>https://cyprien.in/resume/ai</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ccd97.github.io/resume/infra</loc>
+    <loc>https://cyprien.in/resume/infra</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ccd97.github.io/resume.md</loc>
+    <loc>https://cyprien.in/resume.md</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ccd97.github.io/llms.txt</loc>
+    <loc>https://cyprien.in/llms.txt</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ccd97.github.io/llms-full.txt</loc>
+    <loc>https://cyprien.in/llms-full.txt</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ccd97.github.io/resumes/ccd97-resume-latest.pdf</loc>
+    <loc>https://cyprien.in/resumes/ccd97-resume-latest.pdf</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ccd97.github.io/resumes/ccd97-resume-backend.pdf</loc>
+    <loc>https://cyprien.in/resumes/ccd97-resume-backend.pdf</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ccd97.github.io/resumes/ccd97-resume-ai.pdf</loc>
+    <loc>https://cyprien.in/resumes/ccd97-resume-ai.pdf</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ccd97.github.io/resumes/ccd97-resume-infra.pdf</loc>
+    <loc>https://cyprien.in/resumes/ccd97-resume-infra.pdf</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

@@ -1,4 +1,4 @@
-# robots.txt for https://ccd97.github.io
+# robots.txt for https://cyprien.in
 # Explicit allow-list for major LLM / AI crawlers.
 
 User-agent: *
@@ -55,4 +55,4 @@ Allow: /
 User-agent: YouBot
 Allow: /
 
-Sitemap: https://ccd97.github.io/sitemap.xml
+Sitemap: https://cyprien.in/sitemap.xml

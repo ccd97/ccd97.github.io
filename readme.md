@@ -1,7 +1,7 @@
 # My Portfolio
 
-- Portfolio – [ccd97.github.io](https://ccd97.github.io/)
-- Resume – [ccd97.github.io/resume.html](https://ccd97.github.io/resume.html)
+- Portfolio – [cyprien.in](https://cyprien.in/)
+- Resume – [cyprien.in/resume.html](https://cyprien.in/resume.html)
 
 Built with [Vite](https://vitejs.dev/), [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/), and [shadcn/ui](https://ui.shadcn.com/).
 
@@ -47,4 +47,4 @@ src/
 
 Deployed automatically to GitHub Pages via [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) on every push to `master`.
 
-One-time setup: in the repo's **Settings → Pages**, set **Source** to **GitHub Actions**.
+One-time setup: in the repo's **Settings → Pages**, set **Source** to **GitHub Actions** and configure the custom domain as `cyprien.in`.

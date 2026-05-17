@@ -11,14 +11,14 @@
         "label": "Backend-focused",
         "file": "ccd97-resume-backend.pdf",
         "shareTitle": "Cyprien Dcunha — Senior Software Engineer — Resume (Backend)",
-        "shareDescription": "Cyprien Dcunha is a backend-focused Senior Software Engineer with 7+ years of experience in large-scale distributed systems, high-throughput & low-latency event-driven microservices, and orchestration systems."
+        "shareDescription": "Cyprien Dcunha is a backend Senior Software Engineer with 7+ years of experience in large-scale distributed systems, high-throughput & low-latency event-driven microservices, and orchestration systems."
     },
     {
         "slug": "ai",
         "label": "AI / GenAI-focused",
         "file": "ccd97-resume-ai.pdf",
         "shareTitle": "Cyprien Dcunha — Senior Software Engineer — Resume (AI / GenAI)",
-        "shareDescription": "Cyprien Dcunha is a Senior Software Engineer with extensive experience in production GenAI and Agentic Systems, RAG systems, LLM fine-tuning, and core AI capabilities."
+        "shareDescription": "Cyprien Dcunha is a Senior AI Software Engineer with extensive experience in production GenAI and Agentic Systems, Agent Orchestration, LLM training & fine-tuning, RAG systems, and core AI capabilities."
     },
     {
         "slug": "infra",

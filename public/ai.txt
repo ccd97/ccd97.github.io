@@ -1,4 +1,4 @@
-# ai.txt — AI training & inference usage policy for https://ccd97.github.io
+# ai.txt — AI training & inference usage policy for https://cyprien.in
 # See https://spawning.ai/ai-txt for context.
 #
 # Owner: Cyprien Dcunha <dcunha.cyprien@gmail.com>
