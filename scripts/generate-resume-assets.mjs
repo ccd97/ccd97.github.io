@@ -43,9 +43,23 @@ function descriptionFor(variant) {
   );
 }
 
+function focusListFor(variant) {
+  if (!Array.isArray(variant.focus) || variant.focus.length === 0) return "";
+  const items = variant.focus
+    .map((item) => `          <li>${escapeHtml(item)}</li>`)
+    .join("\n");
+  return `
+        <h2>Focus areas</h2>
+        <ul>
+${items}
+        </ul>`;
+}
+
 function renderVariantPage(variant) {
   const title = escapeHtml(titleFor(variant));
   const description = escapeHtml(descriptionFor(variant));
+  const headline = variant.headline ? escapeHtml(variant.headline) : "";
+  const focusList = focusListFor(variant);
   const pageUrl = `${siteUrl}/resume/${variant.slug}`;
   const pdfUrl = `/resumes/${variant.file}`;
   const pdfTitle = `${variant.label} Resume PDF`;
@@ -80,12 +94,16 @@ function renderVariantPage(variant) {
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
+        <h1>${escapeHtml(personName)} — ${escapeHtml(variant.label)} résumé</h1>
+        ${headline ? `<p>${headline}</p>` : ""}
+        <p>${description}</p>${focusList}
+      </div>
+    </div>
     <noscript>
       <p>
-        <a href="${siteUrl}${pdfUrl}">
-          Download the ${escapeHtml(variant.label)} Resume PDF
-        </a>
+        <a href="${siteUrl}${pdfUrl}">Download the ${escapeHtml(variant.label)} résumé (PDF)</a>
       </p>
     </noscript>
     <script type="module" src="/src/resume.tsx"></script>
@@ -112,6 +130,7 @@ function renderSitemap() {
     urlEntry(`${siteUrl}/resume.md`, "weekly", "0.9"),
     urlEntry(`${siteUrl}/llms.txt`, "weekly", "0.8"),
     urlEntry(`${siteUrl}/llms-full.txt`, "weekly", "0.8"),
+    urlEntry(`${siteUrl}/feed.xml`, "weekly", "0.5"),
     ...variants.map((variant) =>
       urlEntry(`${siteUrl}/resumes/${variant.file}`, "monthly", variant.slug === "latest" ? "0.8" : "0.7"),
     ),
@@ -153,7 +172,28 @@ for (const fileName of expectedLegacyPages) {
   }
 }
 
-await rm(generatedResumeDir, { recursive: true, force: true });
+await mkdir(generatedResumeDir, { recursive: true });
+
+// Remove previously generated variant artifacts only, preserving any
+// hand-maintained files in resume/ (e.g. a custom resume/index.html page).
+for (const entry of await readdir(generatedResumeDir, { withFileTypes: true })) {
+  const entryPath = path.join(generatedResumeDir, entry.name);
+  if (entry.isDirectory()) {
+    try {
+      const contents = await readFile(path.join(entryPath, "index.html"), "utf8");
+      if (contents.includes(generatedMarker)) {
+        await rm(entryPath, { recursive: true, force: true });
+      }
+    } catch (err) {
+      if (err.code !== "ENOENT") throw err;
+    }
+  } else if (/\.html$/.test(entry.name)) {
+    const contents = await readFile(entryPath, "utf8");
+    if (contents.includes(generatedMarker)) {
+      await unlink(entryPath);
+    }
+  }
+}
 
 for (const variant of variants) {
   const variantDir = path.join(generatedResumeDir, variant.slug);

@@ -46,6 +46,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://cyprien.in/feed.xml</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://cyprien.in/resumes/ccd97-resume-latest.pdf</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

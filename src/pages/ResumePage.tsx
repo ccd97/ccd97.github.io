@@ -183,6 +183,23 @@ export function ResumePage() {
 
         {variant ? (
           <div className="rounded-lg border shadow-sm overflow-hidden bg-white">
+            <div className="sr-only">
+              <h1>
+                {hero.name} — {variant.label} résumé
+              </h1>
+              {variant.headline && <p>{variant.headline}</p>}
+              {variant.shareDescription && <p>{variant.shareDescription}</p>}
+              {variant.focus && variant.focus.length > 0 && (
+                <>
+                  <h2>Focus areas</h2>
+                  <ul>
+                    {variant.focus.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                </>
+              )}
+            </div>
             <PdfViewer key={variant.slug} src={`/resumes/${variant.file}`} />
           </div>
         ) : (

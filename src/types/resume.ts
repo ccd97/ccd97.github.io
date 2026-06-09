@@ -29,6 +29,8 @@ export interface PdfVariant {
   file: string;
   shareTitle?: string;
   shareDescription?: string;
+  headline?: string;
+  focus?: string[];
 }
 
 export interface ResumeData {

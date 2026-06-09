@@ -4,27 +4,59 @@
         "label": "Latest",
         "file": "ccd97-resume-latest.pdf",
         "shareTitle": "Cyprien Dcunha — Senior Software Engineer — Resume (Latest)",
-        "shareDescription": "Cyprien Dcunha is a Senior Software Engineer with 7+ years of experience in large-scale distributed systems, GenAI/Agentic systems, high-throughput backend platforms, and cloud infrastructure."
+        "shareDescription": "Cyprien Dcunha is a Senior Software Engineer with 7+ years of experience in large-scale distributed systems, GenAI/Agentic systems, high-throughput backend platforms, and cloud infrastructure.",
+        "headline": "Senior Software Engineer — Distributed Systems & Applied GenAI",
+        "focus": [
+            "Large-scale distributed systems & event-driven architecture",
+            "High-throughput, low-latency backend platforms",
+            "Applied GenAI: RAG, agents & LLM orchestration",
+            "Cloud infrastructure across AWS & GCP",
+            "7+ years across Amazon & Salesforce"
+        ]
     },
     {
         "slug": "backend",
         "label": "Backend-focused",
         "file": "ccd97-resume-backend.pdf",
         "shareTitle": "Cyprien Dcunha — Senior Software Engineer — Resume (Backend)",
-        "shareDescription": "Cyprien Dcunha is a backend Senior Software Engineer with 7+ years of experience in large-scale distributed systems, high-throughput & low-latency event-driven microservices, and orchestration systems."
+        "shareDescription": "Cyprien Dcunha is a backend Senior Software Engineer with 7+ years of experience in large-scale distributed systems, high-throughput & low-latency event-driven microservices, and orchestration systems.",
+        "headline": "Senior Backend Engineer — Distributed Systems & Event-Driven Microservices",
+        "focus": [
+            "Event-driven microservices (Lambda, SQS, SNS, DynamoDB)",
+            "High-throughput, low-latency distributed systems",
+            "Domain-driven design & orchestration systems",
+            "Java, Python & C++ on AWS",
+            "Decomposing monoliths into scalable platforms"
+        ]
     },
     {
         "slug": "ai",
         "label": "AI / GenAI-focused",
         "file": "ccd97-resume-ai.pdf",
         "shareTitle": "Cyprien Dcunha — Senior Software Engineer — Resume (AI / GenAI)",
-        "shareDescription": "Cyprien Dcunha is a Senior AI Software Engineer with extensive experience in production GenAI and Agentic Systems, Agent Orchestration, LLM training & fine-tuning, RAG systems, and core AI capabilities."
+        "shareDescription": "Cyprien Dcunha is a Senior AI Software Engineer with extensive experience in production GenAI and Agentic Systems, Agent Orchestration, LLM training & fine-tuning, RAG systems, and core AI capabilities.",
+        "headline": "Senior AI / GenAI Engineer — Agentic Systems, RAG & LLM Orchestration",
+        "focus": [
+            "Production GenAI & agentic systems",
+            "Agent orchestration & tool-use pipelines",
+            "RAG systems over domain knowledge",
+            "LLM training, fine-tuning & evaluation",
+            "AWS Bedrock, LangChain & Model Context Protocol"
+        ]
     },
     {
         "slug": "infra",
         "label": "Infra-focused",
         "file": "ccd97-resume-infra.pdf",
         "shareTitle": "Cyprien Dcunha — Senior Software Engineer — Resume (Infra)",
-        "shareDescription": "Cyprien Dcunha is a Senior Software Engineer experienced in multi-cloud architecture, fault-tolerant infrastructure, microservices scaling, and cloud security."
+        "shareDescription": "Cyprien Dcunha is a Senior Software Engineer experienced in multi-cloud architecture, fault-tolerant infrastructure, microservices scaling, and cloud security.",
+        "headline": "Senior Infrastructure Engineer — Multi-Cloud, Kubernetes & Platform Scaling",
+        "focus": [
+            "Multi-cloud architecture across AWS & GCP",
+            "Fault-tolerant, highly-available infrastructure",
+            "Kubernetes (GKE), Cloud SQL & containerization",
+            "Microservices scaling & reliability",
+            "Cloud security & production readiness"
+        ]
     }
 ]
