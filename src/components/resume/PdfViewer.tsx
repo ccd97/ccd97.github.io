@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Loader2 } from "lucide-react";
+import "./PdfViewer.css";
 
 interface Props {
   src: string;
@@ -43,6 +44,10 @@ export function PdfViewer({ src }: Props) {
           const scale = width / baseViewport.width;
           const viewport = page.getViewport({ scale });
 
+          const pageDiv = document.createElement("div");
+          pageDiv.className = "pdf-page";
+          container.appendChild(pageDiv);
+
           const canvas = document.createElement("canvas");
           canvas.width = Math.floor(viewport.width * dpr);
           canvas.height = Math.floor(viewport.height * dpr);
@@ -53,13 +58,30 @@ export function PdfViewer({ src }: Props) {
           const ctx = canvas.getContext("2d");
           if (!ctx) continue;
 
-          container.appendChild(canvas);
+          pageDiv.appendChild(canvas);
           await page.render({
             canvas,
             canvasContext: ctx,
             viewport,
             transform: dpr !== 1 ? [dpr, 0, 0, dpr, 0, 0] : undefined,
           }).promise;
+          if (cancelled) return;
+
+          // Overlay an invisible, selectable text layer aligned to the canvas.
+          const textLayerDiv = document.createElement("div");
+          textLayerDiv.className = "textLayer";
+          textLayerDiv.style.setProperty("--total-scale-factor", String(scale));
+          textLayerDiv.style.setProperty("--scale-round-x", "1px");
+          textLayerDiv.style.setProperty("--scale-round-y", "1px");
+          pageDiv.appendChild(textLayerDiv);
+
+          const textLayer = new pdfjsLib.TextLayer({
+            textContentSource: page.streamTextContent(),
+            container: textLayerDiv,
+            viewport,
+          });
+          await textLayer.render();
+          if (cancelled) return;
         }
       } catch (e) {
         if (!cancelled) setError(e instanceof Error ? e.message : String(e));
