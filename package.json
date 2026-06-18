@@ -4,11 +4,12 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "generate:resume-pdfs": "node scripts/generate-resume-pdfs.mjs",
     "generate:resume-assets": "node scripts/generate-resume-assets.mjs",
     "generate:og-images": "node scripts/generate-og-images.mjs",
     "predev": "npm run generate:resume-assets",
     "dev": "vite",
-    "prebuild": "npm run generate:resume-assets && npm run generate:og-images",
+    "prebuild": "npm run generate:resume-pdfs && npm run generate:resume-assets && npm run generate:og-images",
     "build": "tsc -b && vite build",
     "prepreview": "npm run generate:resume-assets",
     "preview": "vite preview"

@@ -11,6 +11,8 @@ dist-ssr
 # generated resume variant pages
 /resume/
 /resume-*.html
+/public/resumes/
+/.resume-build/
 
 # generated OG image assets
 /public/media/og-*.png

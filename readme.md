@@ -14,10 +14,34 @@ npm run build     # production build → dist/
 npm run preview   # serve the production build locally
 ```
 
+## Resume PDF generation
+
+Resume PDFs are built from LaTeX sources in `src/resume-sources/`. Install a TeX distribution with `latexmk` before running the PDF generator locally:
+
+```bash
+# macOS
+brew install --cask mactex
+
+# Ubuntu / Debian
+sudo apt-get update
+sudo apt-get install -y latexmk texlive-fonts-extra texlive-latex-extra
+
+# Windows
+winget install MiKTeX.MiKTeX
+```
+
+Then generate the PDFs:
+
+```bash
+npm run generate:resume-pdfs
+```
+
+Generated PDFs are written to `public/resumes/`. `npm run build` runs this automatically before building the site; GitHub Pages CI installs the Linux TeX packages in `.github/workflows/deploy.yml`.
+
 ## Resume variants
 
 Resume PDF variants are defined in [`src/data/pdfVariants.json`](src/data/pdfVariants.json).
-To add a new shareable variant, place the PDF in `public/resumes/` and add an entry like:
+To add a new shareable variant, add a LaTeX project under `src/resume-sources/<slug>/` and add an entry like:
 
 ```json
 { "slug": "ml", "label": "ML-focused", "file": "ccd97-resume-ml.pdf" }
