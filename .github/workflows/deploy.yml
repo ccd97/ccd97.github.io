@@ -27,10 +27,12 @@ jobs:
       - name: Install LaTeX toolchain
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends \
-            latexmk \
+          sudo apt-get install -y \
+            texlive-latex-base \
+            texlive-latex-recommended \
+            texlive-fonts-recommended \
             texlive-fonts-extra \
-            texlive-latex-extra
+            latexmk
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
