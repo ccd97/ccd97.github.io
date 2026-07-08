@@ -52,7 +52,7 @@
         "org": "Salesforce Central AI",
         "role": "Senior Software Engineer",
         "duration": "2026 – Present",
-        "summary": "Built IDE plugins, MCPs, and autonomous Agent Skills to accelerate developer productivity and drive AI adoption across engineering.",
+        "summary": "Built harness plugins, MCPs, and autonomous Agent Skills to accelerate developer productivity and drive AI adoption across engineering.",
         "metrics": [
           {
             "label": "Target Productivity",
@@ -76,7 +76,7 @@
         ],
         "problem": "Standard SDLC workflows—such as PR reviews, incident triage, and environment setups—create significant bottlenecks that hinder engineering velocity.",
         "approach": [
-          "Developed an IDE plugin to provide a paved-path AI environment setup with custom MCPs, Hooks, and AI rules.",
+          "Developed an harness plugin to provide a paved-path AI environment setup with custom MCPs, Hooks, and AI rules.",
           "Built autonomous Agent Skills to monitor CI pipelines, assist with PR reviews, and aid in incident triage.",
           "Implemented Spec-Driven Development (SDD) workflows to automate test generation and pre-merge code quality checks."
         ],

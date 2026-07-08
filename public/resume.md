@@ -13,7 +13,7 @@ Senior Software Engineer · Staff Software Engineer · Senior Backend Engineer �
 
 ## Summary
 
-Senior software engineer with deep experience in **distributed systems, event-driven architecture, and GenAI automation**. Currently at **Salesforce Hyperforce AI**, building agentic SDLC tooling and IDE plugins. Previously **nearly 6 years at Amazon (FAANG / Big Five) Finance Automation** — one of the most demanding engineering environments in the industry — where he co-architected a large-scale event-driven vendor-payments platform, built a self-service rule engine, and shipped a production LLM-driven reconciliation engine (RAG, AWS Bedrock, LangChain). Strong hybrid profile: can both design high-throughput distributed systems and ship production GenAI inside them.
+Senior software engineer with deep experience in **distributed systems, event-driven architecture, and GenAI automation**. Currently at **Salesforce Hyperforce AI**, building agentic SDLC tooling and harness plugins. Previously **nearly 6 years at Amazon (FAANG / Big Five) Finance Automation** — one of the most demanding engineering environments in the industry — where he co-architected a large-scale event-driven vendor-payments platform, built a self-service rule engine, and shipped a production LLM-driven reconciliation engine (RAG, AWS Bedrock, LangChain). Strong hybrid profile: can both design high-throughput distributed systems and ship production GenAI inside them.
 
 ## Skills
 
@@ -38,7 +38,7 @@ Senior software engineer with deep experience in **distributed systems, event-dr
 ### Salesforce — Senior Software Engineer, Hyperforce AI
 *Nov 2025 – present · Hyderabad, India*
 
-**Agentic SDLC Tooling** — building IDE plugins, MCPs, and autonomous Agent Skills to accelerate developer productivity and drive AI adoption across engineering.
+**Agentic SDLC Tooling** — building harness plugins, MCPs, and autonomous Agent Skills to accelerate developer productivity and drive AI adoption across engineering.
 - Achieved almost 100% weekly AI engagement across the engineering team.
 - Reduced on-call incident analysis time by 5x and cut PR review wait times by ~50%.
 - Implemented Spec-Driven Development (SDD) workflows for pre-merge code quality checks.

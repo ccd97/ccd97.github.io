@@ -73,7 +73,7 @@
         {
             "name":"Salesforce: Agentic SDLC Tooling",
             "description": [
-                "Built <b>IDE plugins, MCPs, and autonomous Agent Skills</b> to accelerate developer productivity and drive AI adoption across engineering.",
+                "Built <b>harness plugins, MCPs, and autonomous Agent Skills</b> to accelerate developer productivity and drive AI adoption across engineering.",
                 "Achieved almost <b>100% weekly AI engagement</b>, reduced on-call incident analysis time by <b>5x</b>, and cut PR review wait times by <b>~50%</b>."
             ]
         },
@@ -137,7 +137,7 @@
     ],
     "achievements":[
         "Amazon SDE Recognition Awards (2022, 2024 & 2025) for raising engineering bar",
-        "Amazon FinAuto Hackathon 2024 finalist - IDE tooling for AWS Step Functions",
+        "Amazon FinAuto Hackathon 2024 finalist - harness tooling for AWS Step Functions",
         "IBM's Call for Code Prize – AngelHack ($1000 prize)",
         "TopCoder Development Challenge – 3rd prize ($1100 prize)"
     ],
