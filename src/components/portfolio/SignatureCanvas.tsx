@@ -4,8 +4,17 @@ const DRAW_DURATION_MS = 1800;
 const DRAW_STAGGER_MS = 900;
 
 const OVERLAY_OPACITY = {
-  light: { predraw: 0.2, postdraw: 0.1 },
-  dark: { predraw: 0.1, postdraw: 0.05 },
+  light: { predraw: 0.28, postdraw: 0.18 },
+  dark: { predraw: 1.0, postdraw: 0.8 },
+};
+
+const DARK_FILL = {
+  fillColor: "#1e2736",
+  gradRadius: 50,
+  gradFalloff: 20,
+  gradCx: 40,
+  gradCy: 50,
+  fillOpacity: 1.0,
 };
 
 const MEASURE_CHUNK = 200;
@@ -107,6 +116,49 @@ function loadSignatureGeometry(): Promise<SignatureGeometry> {
   return geometryPromise;
 }
 
+function applyDarkBackdrop(svg: SVGSVGElement, group: SVGGElement) {
+  group.setAttribute("stroke", "#000000");
+  if (svg.querySelector("#dark-backdrop-grad")) return;
+
+  const svgNS = "http://www.w3.org/2000/svg";
+  const defs = document.createElementNS(svgNS, "defs");
+  const grad = document.createElementNS(svgNS, "radialGradient");
+  grad.setAttribute("id", "dark-backdrop-grad");
+  grad.setAttribute("cx", DARK_FILL.gradCx + "%");
+  grad.setAttribute("cy", DARK_FILL.gradCy + "%");
+  grad.setAttribute("r", DARK_FILL.gradRadius + "%");
+  const steps = 10;
+  for (let i = 0; i <= steps; i++) {
+    const pct = DARK_FILL.gradFalloff + (i / steps) * (100 - DARK_FILL.gradFalloff);
+    const opacity = 1 - i / steps;
+    const stop = document.createElementNS(svgNS, "stop");
+    stop.setAttribute("offset", pct + "%");
+    stop.setAttribute("stop-color", DARK_FILL.fillColor);
+    stop.setAttribute("stop-opacity", String(opacity));
+    grad.appendChild(stop);
+  }
+  defs.appendChild(grad);
+
+  const vb = (svg.getAttribute("viewBox") ?? "0 0 2048 2048").split(" ");
+  const rect = document.createElementNS(svgNS, "rect");
+  rect.setAttribute("class", "dark-backdrop");
+  rect.setAttribute("x", "0");
+  rect.setAttribute("y", "0");
+  rect.setAttribute("width", vb[2] ?? "2048");
+  rect.setAttribute("height", vb[3] ?? "2048");
+  rect.setAttribute("fill", "url(#dark-backdrop-grad)");
+  rect.setAttribute("opacity", String(DARK_FILL.fillOpacity));
+
+  svg.insertBefore(defs, svg.firstChild);
+  svg.insertBefore(rect, group);
+}
+
+function removeDarkBackdrop(svg: SVGSVGElement, group: SVGGElement) {
+  group.setAttribute("stroke", "currentColor");
+  svg.querySelector(".dark-backdrop")?.remove();
+  svg.querySelector("#dark-backdrop-grad")?.parentElement?.remove();
+}
+
 export function SignatureCanvas() {
   const hostRef = useRef<HTMLDivElement>(null);
   const drawAnimationsRef = useRef<Animation[]>([]);
@@ -191,6 +243,13 @@ export function SignatureCanvas() {
       svg.appendChild(group);
       host.appendChild(svg);
 
+      const currentlyDark = document.documentElement.classList.contains("dark");
+      if (currentlyDark) {
+        applyDarkBackdrop(svg, group);
+      } else {
+        removeDarkBackdrop(svg, group);
+      }
+
       if (prefersReducedMotion) {
         setDrawComplete(true);
         return;
@@ -249,6 +308,21 @@ export function SignatureCanvas() {
   useEffect(() => {
     const host = hostRef.current;
     if (!host) return;
+    const svg = host.querySelector("svg");
+    if (!svg) return;
+    const group = svg.querySelector("g");
+    if (!group) return;
+
+    if (isDark) {
+      applyDarkBackdrop(svg, group);
+    } else {
+      removeDarkBackdrop(svg, group);
+    }
+  }, [isDark]);
+
+  useEffect(() => {
+    const host = hostRef.current;
+    if (!host) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -265,8 +339,9 @@ export function SignatureCanvas() {
     return () => observer.disconnect();
   }, []);
 
-  const mobileFadeMask =
-    "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)";
+  const mobileFadeMask = isDark
+    ? "linear-gradient(to right, transparent 0%, transparent 20%, black 55%, black 100%)"
+    : "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)";
   const desktopFadeMask =
     "linear-gradient(to right, transparent 0%, transparent 20%, black 55%, black 100%)";
   const fadeMask = isDesktop ? desktopFadeMask : mobileFadeMask;
