@@ -397,14 +397,25 @@
     "intro": "Experiments and weekend builds — from recent LLM fine-tuning pipelines back through college-era systems work.",
     "items": [
       {
+        "name": "SystemDesign.ai",
+        "repo": "SystemDesign.ai",
+        "type": "github",
+        "description": "Desktop app that turns Excalidraw into an AI-powered system design interview practice tool — real-time audio & canvas diff recording, AI interviewer chatbot, and AI evaluation scoring.",
+        "tools": [
+          "Electron",
+          "React",
+          "LLMs",
+          "TypeScript"
+        ]
+      },
+      {
         "name": "VoiceTune",
         "repo": "voicetune",
         "type": "github",
-        "description": "Pipeline for turning personal audio call recordings into LoRA fine-tuning datasets for local LLMs — end-to-end from audio preprocessing to Gemma fine-tunes on GCP.",
+        "description": "Pipeline for turning personal audio call recordings into LoRA fine-tuning datasets for local LLMs — end-to-end from audio preprocessing to fine-tunes on GCP.",
         "tools": [
           "Python",
           "LoRA",
-          "Gemma",
           "GCP",
           "LLMs"
         ]
@@ -505,13 +516,13 @@
         "title": "Gen-AI & ML",
         "items": [
           "LLMs",
+          "Harness Engineering",
           "Agent Skills",
           "Agent Memory",
           "AWS Bedrock",
           "AWS AgentCore",
           "RAG",
           "LangChain",
-          "Prompt Engineering",
           "TensorFlow",
           "PyTorch",
           "NumPy",
