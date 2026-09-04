@@ -14,9 +14,10 @@ import type { PortfolioData } from "@/types/portfolio";
 const data = resumeData as ResumeData;
 const pdfVariants = pdfVariantsData as PdfVariant[];
 const { hero } = portfolioData as PortfolioData;
-const variantPagePaths = Object.fromEntries(
-  pdfVariants.map((variant) => [variant.slug, `/resume/${variant.slug}`]),
-);
+
+const SHARE_SITE_URL = "https://cyprien.in";
+const RAW_BASE_URL =
+  "https://raw.githubusercontent.com/ccd97/ccd97.github.io/master/public";
 
 function getLinkedVariantSlug() {
   const isKnownVariant = (slug: string | null) =>
@@ -51,12 +52,9 @@ export function ResumePage() {
   const [fromDirectLink, setFromDirectLink] = useState(false);
   const variant = pdfVariants.find((v) => v.slug === selected);
 
-  const shareUrl = (() => {
-    if (typeof window === "undefined") return "";
-    return variant
-      ? `${window.location.origin}${variantPagePaths[variant.slug]}`
-      : `${window.location.origin}/resume.html`;
-  })();
+  const shareUrl = variant
+    ? `${RAW_BASE_URL}/resumes/${variant.file}`
+    : `${SHARE_SITE_URL}/resume.html`;
 
   const handleShare = async () => {
     const shareData = {
@@ -146,7 +144,7 @@ export function ResumePage() {
       <aside className="fixed z-30 bottom-4 left-1/2 -translate-x-1/2 md:bottom-auto md:left-auto md:translate-x-0 md:top-[5vh] md:right-0">
         <div className="flex flex-row md:flex-col gap-0 bg-background border rounded-md md:rounded-l-md md:rounded-r-none shadow-md overflow-hidden">
           <button
-            onClick={() => window.open("./index.html")}
+            onClick={() => window.open("/", "_blank", "noopener")}
             className="flex flex-col items-center gap-1 px-3 py-2 text-xs hover:bg-muted active:bg-muted/80 transition-colors"
           >
             <IdCard className="h-4 w-4" />

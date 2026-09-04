@@ -36,7 +36,7 @@ Then generate the PDFs:
 npm run generate:resume-pdfs
 ```
 
-Generated PDFs are written to `public/resumes/`. `npm run build` runs this automatically before building the site; GitHub Pages CI installs the Linux TeX packages in `.github/workflows/deploy.yml`.
+Generated PDFs are written to `public/resumes/`. CI commits them as a raw.githubusercontent.com mirror when they change. `npm run build` runs this automatically before building the site; GitHub Pages CI installs the Linux TeX packages in `.github/workflows/deploy.yml`.
 
 ## Resume variants
 
