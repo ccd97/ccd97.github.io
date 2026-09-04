@@ -101,7 +101,7 @@ async function renderVariantPage(variant) {
     <link rel="alternate" type="application/pdf" title="${escapeHtml(pdfTitle)} (raw mirror)" href="${rawPdfUrl}" />
     <link rel="icon" type="image/png" href="/media/tabicon.ico" />
     <style>
-      #resume-fallback{min-height:100vh;box-sizing:border-box;background:#f4f4f5;padding:0 20px 8vh;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#18181b;line-height:1.6;}
+      #resume-fallback{min-height:100vh;box-sizing:border-box;background:#f4f4f5;padding:0 20px 8vh;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#18181b;line-height:1.6;display:none;}
       #resume-fallback .banner{display:flex;align-items:center;justify-content:center;gap:10px;margin:0 -20px 5vh;padding:12px 20px;font-size:.85rem;line-height:1.5;text-align:center;color:#92400e;background:#fffbeb;border-bottom:1px solid #fde68a;}
       #resume-fallback .banner svg{flex:none;}
       #resume-fallback .card{max-width:560px;margin:0 auto;padding:56px 48px;text-align:center;background:#fff;border:1px solid #e4e4e7;border-radius:16px;box-shadow:0 12px 32px rgba(0,0,0,.07);}
@@ -117,7 +117,7 @@ async function renderVariantPage(variant) {
       #resume-fallback .alt a{color:#18181b;}
       @media (max-width:480px){#resume-fallback{padding:0 12px 5vh;}#resume-fallback .banner{margin:0 -12px 4vh;}#resume-fallback .card{padding:36px 24px;}}
     </style>
-    <noscript><meta http-equiv="refresh" content="0;url=${rawPdfUrl}" /></noscript>
+    <noscript><meta http-equiv="refresh" content="0;url=${rawPdfUrl}" /><style>#resume-fallback{display:block;}</style></noscript>
     <script>
       document.documentElement.classList.remove("dark");
     </script>
@@ -147,6 +147,14 @@ async function renderVariantPage(variant) {
         </p>
       </main>
     </noscript>
+    <script>
+      setTimeout(function () {
+        if (!window.__resumeBooted) {
+          var el = document.getElementById("resume-fallback");
+          if (el) el.style.display = "block";
+        }
+      }, 2500);
+    </script>
     <script type="module" src="/src/resume.tsx"></script>
   </body>
 </html>
