@@ -45,11 +45,13 @@ export function CaseStudyDialog({ caseStudy, open, onOpenChange }: Props) {
               <div
                 className={
                   "grid gap-4 md:gap-6 " +
-                  (caseStudy.metrics.length >= 3
-                    ? "grid-cols-2 md:grid-cols-3"
-                    : caseStudy.metrics.length === 2
-                      ? "grid-cols-2"
-                      : "grid-cols-1")
+                  (caseStudy.metrics.length >= 4
+                    ? "grid-cols-2 md:grid-cols-4"
+                    : caseStudy.metrics.length === 3
+                      ? "grid-cols-2 md:grid-cols-3"
+                      : caseStudy.metrics.length === 2
+                        ? "grid-cols-2"
+                        : "grid-cols-1")
                 }
               >
                 {caseStudy.metrics.map((m, i) => (

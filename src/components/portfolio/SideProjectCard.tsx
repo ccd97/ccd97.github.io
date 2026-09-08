@@ -18,12 +18,13 @@ export function SideProjectCard({ project }: Props) {
   }, [project.type, project.repo]);
 
   const href =
+    project.link ??
     meta?.html_url ??
     (project.type === "github" && project.repo
       ? `https://github.com/ccd97/${project.repo}`
       : project.type === "gitlab" && project.repo
         ? `https://gitlab.com/ccd97/${project.repo}`
-        : (project.link ?? "#"));
+        : "#");
 
   const SourceIcon =
     project.type === "github"

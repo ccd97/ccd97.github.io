@@ -73,14 +73,15 @@
         {
             "name":"Salesforce: Agentic SDLC Tooling",
             "description": [
-                "Built <b>harness plugins, MCPs, and autonomous Agent Skills</b> to accelerate developer productivity and drive AI adoption across engineering.",
+                "Built <b>harness plugins, MCPs, and autonomous Agent Skills</b> to accelerate developer productivity; consolidated integrations onto supported tooling with quality, accessibility, and provenance controls.",
                 "Achieved almost <b>100% weekly AI engagement</b>, reduced on-call incident analysis time by <b>5x</b>, and cut PR review wait times by <b>~50%</b>."
             ]
         },
         {
-            "name":"Salesforce: Core & Platform Services GCP Uplift",
+            "name":"Salesforce: Multi-Substrate Core, Platform & Agentforce GCP Uplift",
             "description": [
-                "Led the first <b>AWS-to-GCP uplifts</b> in the organization, establishing foundational GCP infrastructure and executing the end-to-end migration of <b>4 core services</b> to serve live customer traffic."
+                "Led the first <b>AWS-to-GCP uplifts</b> in the organization, establishing foundational GCP infrastructure and executing end-to-end migration of <b>9 Tier 1 Core, Platform, and Agentforce services</b> to serve live customer traffic.",
+                "Engineered a <b>multi-substrate routing SDK</b> to dynamically route requests to the correct substrate (AWS/GCP), mitigating vendor lock-in under strict data-residency laws."
             ]
         },
         {

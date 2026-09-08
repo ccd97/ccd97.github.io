@@ -5,6 +5,11 @@
 
 Built with [Vite](https://vitejs.dev/), [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/), and [shadcn/ui](https://ui.shadcn.com/).
 
+### Personal Project Sites
+
+- SystemDesign.ai – [cyprien.in/SystemDesign.ai](https://cyprien.in/SystemDesign.ai)
+- CP Solutions – [cyprien.in/cp_solutions](https://cyprien.in/cp_solutions/)
+
 ## Development
 
 ```bash

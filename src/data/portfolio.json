@@ -55,6 +55,10 @@
         "summary": "Built harness plugins, MCPs, and autonomous Agent Skills to accelerate developer productivity and drive AI adoption across engineering.",
         "metrics": [
           {
+            "label": "Plugins created",
+            "value": "2"
+          },
+          {
             "label": "Target Productivity",
             "value": "3x"
           },
@@ -76,14 +80,14 @@
         ],
         "problem": "Standard SDLC workflows—such as PR reviews, incident triage, and environment setups—create significant bottlenecks that hinder engineering velocity.",
         "approach": [
-          "Developed an harness plugin to provide a paved-path AI environment setup with custom MCPs, Hooks, and AI rules.",
+          "Developed harness plugins to provide a paved-path AI environment setup with custom MCPs, Hooks, and AI rules.",
           "Built autonomous Agent Skills to monitor CI pipelines, assist with PR reviews, and aid in incident triage.",
-          "Implemented Spec-Driven Development (SDD) workflows to automate test generation and pre-merge code quality checks."
+          "Consolidated integrations onto supported tooling and added quality, accessibility, and provenance controls."
         ],
         "outcome": [
           "Achieved almost 100% weekly AI engagement across the engineering team.",
           "Reduced on-call incident analysis time by 5x and cut PR review wait times by ~50%.",
-          "Improved CI pipeline stability by automating test generation and pre-merge checks."
+          "Strengthened build auditability and pipeline reliability across the organization."
         ],
         "roleIds": [
           "sfdc-sde"
@@ -95,11 +99,11 @@
         "org": "Salesforce Core Infra",
         "role": "Lead",
         "duration": "Nov 2025 – Present",
-        "summary": "Established multi-cloud infrastructure, extending four core/platform native-AWS services to GCP.",
+        "summary": "Established multi-substrate infrastructure, extending Core, Platform, and Agentforce native-AWS services to GCP with a dedicated routing SDK.",
         "metrics": [
           {
             "label": "Services uplifted",
-            "value": "4"
+            "value": "9"
           }
         ],
         "tech": [
@@ -109,15 +113,17 @@
           "Terraform",
           "Kubernetes"
         ],
-        "problem": "Core and platform services ran only on AWS. Each uplift meant standing up GCP infra, getting it production-ready, and moving live customers across.",
+        "problem": "Core, Platform, and Agentforce services ran only on AWS. Supporting multi-substrate deployments required standing up GCP infra, routing traffic dynamically to the correct substrate without vendor lock-in, and moving live customers across.",
         "approach": [
+          "Engineered an abstraction SDK to ensure accurate request routing to the correct substrate (AWS vs. GCP).",
           "Set up GCP infra for each service in preprod and prod.",
           "Ran production readiness sign-offs and operational tooling before taking traffic.",
-          "Coordinated upstream and downstream changes with dependency teams.",
+          "Coordinated upstream and downstream changes with Core, Platform, and Agentforce dependency teams.",
           "Migrated customers from AWS to GCP."
         ],
         "outcome": [
-          "Shipped Key Broker, DocGen, PDFGen, etc. services on GCP.",
+          "Shipped 9 Tier 1 services across Core, Platform, and Agentforce on GCP.",
+          "Eliminated single-cloud vendor lock-in under strict data-residency and governance laws.",
           "First AWS-to-GCP uplifts in the platform team and wider org."
         ],
         "roleIds": [
@@ -400,6 +406,7 @@
         "name": "SystemDesign.ai",
         "repo": "SystemDesign.ai",
         "type": "github",
+        "link": "https://cyprien.in/SystemDesign.ai/",
         "description": "Desktop app that turns Excalidraw into an AI-powered system design interview practice tool — real-time audio & canvas diff recording, AI interviewer chatbot, and AI evaluation scoring.",
         "tools": [
           "Electron",
@@ -457,6 +464,7 @@
         "name": "CP Solutions",
         "repo": "cp_solutions",
         "type": "github",
+        "link": "https://cyprien.in/cp_solutions/",
         "description": "Archive of my competitive programming solutions across Codeforces, CodeChef, and HackerRank — mostly C++.",
         "tools": [
           "C++"

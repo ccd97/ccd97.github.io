@@ -19,7 +19,11 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
-\input{glyphtounicode}
+\usepackage{iftex}
+\ifpdftex
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
 
 
 
@@ -50,8 +54,7 @@
   \vspace{-4pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule\vspace{-5pt}]
 
-% Ensure that generate pdf is machine readable/ATS parsable
-\pdfgentounicode=1
+% Ensure that generate pdf is machine readable/ATS parsable (handled above via ifpdftex)
 
 %-------------------------%
 % Custom commands

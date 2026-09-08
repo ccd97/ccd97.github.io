@@ -8,7 +8,15 @@ const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
 const sourceRoot = path.join(rootDir, "src/resume-sources");
 const buildRoot = path.join(rootDir, ".resume-build");
 const outputDir = path.join(rootDir, "public/resumes");
-const latexCommand = process.env.RESUME_LATEX_COMMAND ?? "latexmk";
+function findLatexCommand() {
+  if (process.env.RESUME_LATEX_COMMAND) return process.env.RESUME_LATEX_COMMAND;
+  const tempTectonic = path.join(process.env.TEMP ?? "", "tectonic", "tectonic.exe");
+  if (existsSync(tempTectonic)) return tempTectonic;
+  return "latexmk";
+}
+
+const latexCommand = findLatexCommand();
+const isTectonic = path.basename(latexCommand, path.extname(latexCommand)).toLowerCase() === "tectonic";
 
 const variants = JSON.parse(
   await readFile(path.join(rootDir, "src/data/pdfVariants.json"), "utf8"),
@@ -49,15 +57,17 @@ function latexEnv() {
 }
 
 function runLatex(sourceDir, buildDir, jobName) {
-  const args = [
-    "-pdf",
-    "-interaction=nonstopmode",
-    "-halt-on-error",
-    "-file-line-error",
-    `-jobname=${jobName}`,
-    `-outdir=${buildDir}`,
-    "resume.tex",
-  ];
+  const args = isTectonic
+    ? ["-o", buildDir, "resume.tex"]
+    : [
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        `-jobname=${jobName}`,
+        `-outdir=${buildDir}`,
+        "resume.tex",
+      ];
 
   return new Promise((resolve, reject) => {
     const child = spawn(latexCommand, args, {
@@ -70,7 +80,7 @@ function runLatex(sourceDir, buildDir, jobName) {
       if (err.code === "ENOENT") {
         reject(
           new Error(
-            `Could not find "${latexCommand}". Install TeX Live/latexmk or set RESUME_LATEX_COMMAND.`,
+            `Could not find "${latexCommand}". Install TeX Live/latexmk, Tectonic, or set RESUME_LATEX_COMMAND.`,
           ),
         );
         return;
@@ -100,7 +110,9 @@ try {
     const entrypoint = path.join(sourceDir, "resume.tex");
     const buildDir = path.join(buildRoot, variant.slug);
     const jobName = path.basename(variant.file, ".pdf");
-    const builtPdf = path.join(buildDir, `${jobName}.pdf`);
+    const builtPdf = isTectonic
+      ? path.join(buildDir, "resume.pdf")
+      : path.join(buildDir, `${jobName}.pdf`);
     const outputPdf = path.join(outputDir, variant.file);
 
     await assertFileExists(entrypoint, `LaTeX entrypoint for "${variant.slug}"`);

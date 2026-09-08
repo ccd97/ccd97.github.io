@@ -41,14 +41,15 @@ Senior software engineer with deep experience in **distributed systems, event-dr
 **Agentic SDLC Tooling** — building harness plugins, MCPs, and autonomous Agent Skills to accelerate developer productivity and drive AI adoption across engineering.
 - Achieved almost 100% weekly AI engagement across the engineering team.
 - Reduced on-call incident analysis time by 5x and cut PR review wait times by ~50%.
-- Implemented Spec-Driven Development (SDD) workflows for pre-merge code quality checks.
+- Consolidated integrations onto supported tooling and added quality, accessibility, and provenance controls.
 
-Lead on the **Core & Platform Services GCP Uplift** programme — porting AWS-native core services onto GCP. Among the first AWS-to-GCP service uplifts in the platform org.
+Lead on the **Multi-Substrate Infrastructure (Core, Platform & Agentforce GCP Uplift)** programme — porting AWS-native services onto GCP (9 services uplifted). Among the first AWS-to-GCP service uplifts in the platform org.
+- Engineered a multi-substrate routing SDK for reliable traffic routing to the correct substrate across AWS and GCP.
 - Stood up GCP infrastructure (GKE, Cloud SQL) for each service in preprod and prod.
 - Ran production readiness sign-offs and operational tooling before taking traffic.
-- Coordinated upstream and downstream changes with dependency teams.
+- Coordinated upstream and downstream changes with dependency teams across Core, Platform, and Agentforce.
 - Migrated live customers from AWS to GCP.
-- Shipped Key Broker, DocGen, PDFGen, and other services onto GCP.
+- Shipped 9 Tier 1 services across Core, Platform, and Agentforce onto GCP.
 
 *Tech: Java · AWS · GCP · GKE · Kubernetes.*
 
@@ -126,8 +127,10 @@ Jupyter-notebook implementations of classic neural-network architectures built *
 
 *Python · Jupyter · TensorFlow · NumPy.*
 
-### Other repositories
+### Other projects & repositories
 
+- **SystemDesign.ai** — AI-assisted system design mock interview desktop app & tool: [cyprien.in/SystemDesign.ai/](https://cyprien.in/SystemDesign.ai/) · [GitHub](https://github.com/ccd97/SystemDesign.ai).
+- **CP Solutions** — archive and search for competitive programming solutions: [cyprien.in/cp_solutions/](https://cyprien.in/cp_solutions/) · [GitHub](https://github.com/ccd97/cp_solutions).
 - **Image Classify Server** — Django + TensorFlow Inception v3 classifier.
 - **VC-Chain** — blockchain-backed version-control experiment.
 - **CP Testing Framework** — Python diff-run tool for competitive programming.

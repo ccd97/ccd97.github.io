@@ -179,6 +179,8 @@ function renderSitemap() {
     urlEntry(`${siteUrl}/resume.md`, "weekly", "0.9"),
     urlEntry(`${siteUrl}/llms.txt`, "weekly", "0.8"),
     urlEntry(`${siteUrl}/llms-full.txt`, "weekly", "0.8"),
+    urlEntry(`${siteUrl}/SystemDesign.ai/`, "monthly", "0.8"),
+    urlEntry(`${siteUrl}/cp_solutions/`, "monthly", "0.8"),
     urlEntry(`${siteUrl}/feed.xml`, "weekly", "0.5"),
     ...variants.map((variant) =>
       urlEntry(`${siteUrl}/resumes/${variant.file}`, "monthly", variant.slug === "latest" ? "0.8" : "0.7"),
